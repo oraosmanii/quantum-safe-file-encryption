@@ -1,0 +1,39 @@
+# Generated test keys and input files (never commit)
+keys/*
+!keys/MANIFEST.csv
+data/
+
+# Temporary outputs from encrypt/decrypt runs
+*.age
+*.gpg
+*.pgp
+*.sec
+*.pub
+out.bin
+tmp/
+
+# Planning files linked in from grupi-master-docs (never commit)
+claude.md
+CLAUDE.md
+PLAN.md
+INTERFACES.md
+TASKS_*.md
+NOTES.md
+PROPOSAL.md
+Projekt_propozimi___Grupi4.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Go
+interop/gopenpgp-cli/gopenpgp-cli
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
