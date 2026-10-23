@@ -3,3 +3,5 @@
 Dockerfile text eol=lf
 Makefile text eol=lf
 *.py text eol=lf
+# Checked with sha256sum inside the container.
+*.sha256 text eol=lf

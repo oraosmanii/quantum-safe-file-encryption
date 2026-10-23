@@ -89,7 +89,13 @@ The full pipeline will be:
 make inputs
 ```
 
-Generates the random input files in `data/` and their hashes in `results/inputs.sha256`.
+Generates the random input files in `data/` (1 KB, 100 KB, 10 MB, 1 GB) and their hashes in `results/inputs.sha256`. Once the hash file exists, `make inputs` only checks the inputs against it. The committed hashes belong to our original random inputs, so in a fresh clone run `sh measure/make_inputs.sh --force` inside the image to generate new inputs and new hashes.
+
+```bash
+make env
+```
+
+Writes `results/env.json`: CPU, RAM, OS, kernel, Docker and image digest, the git commit, and the full version output of every tool. Runs on the host and starts the containers itself. The full runs refuse to start without it.
 
 ```bash
 docker run --rm -v "$PWD:/work" -w /work pqc-bench python3 bench/run_all.py --phase full
