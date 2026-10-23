@@ -4,11 +4,21 @@ The timing runs (run_timing.py, A) and the resource runs (run_resources.py, C) b
 build their commands here, so they execute exactly the same tool calls. Standard
 library only: this module is imported inside the pqc-bench image and on the host.
 build_command() only reads files; prepare() and verify() call age and gpg, so they
-run inside the image.
+run inside the image. From the host, call them through the command line:
+
+    python3 bench/conditions.py list --phase pilot     # condition IDs, fixed order
+    python3 bench/conditions.py show <condition_id>    # the Command as JSON
+    docker run --rm -v "$PWD:/work" -w /work pqc-bench \\
+        python3 bench/conditions.py prepare|verify|cleanup <condition_id>
+
+verify exits 0 if the output matches the input's SHA-256 and 1 if it does not.
 """
 
+import argparse
+import json
 import os
-from dataclasses import dataclass
+import sys
+from dataclasses import asdict, dataclass
 
 import common
 
@@ -76,6 +86,18 @@ class Condition:
         if self.op == "encrypt":
             return ""
         return rid(self.n_recipients if self.recipient_position == "last" else 1)
+
+
+def from_id(condition_id):
+    """The Condition of a condition_id, e.g. "age-pq_10MB_n50_decrypt_last"."""
+    try:
+        mode, size_id, n, op, position = condition_id.split("_")
+        cond = Condition(mode, size_id, int(n.removeprefix("n")), op, position)
+    except ValueError as e:
+        raise ValueError(f"not a condition_id: {condition_id}") from e
+    if cond.condition_id != condition_id:
+        raise ValueError(f"not a condition_id: {condition_id}")
+    return cond
 
 
 def run_count(cond, phase):
@@ -245,3 +267,36 @@ def cleanup(cond: Condition) -> None:
     remove(build_command(cond).output_path)
     if cond.op == "decrypt":
         remove(ciphertext_path(cond.mode, cond.size_id, cond.n_recipients))
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Measured conditions and their commands.")
+    sub = parser.add_subparsers(dest="action", required=True)
+    sub.add_parser("list", help="print every condition_id of a phase").add_argument(
+        "--phase", choices=sorted(PHASE_SIZES), required=True)
+    for action in ("show", "prepare", "verify", "cleanup"):
+        sub.add_parser(action).add_argument("condition_id")
+    args = parser.parse_args()
+
+    if args.action == "list":
+        for cond in conditions(args.phase):
+            print(cond.condition_id)
+        return
+    try:
+        cond = from_id(args.condition_id)
+    except ValueError as e:
+        sys.exit(f"error: {e}")
+    if args.action == "show":
+        print(json.dumps({**asdict(build_command(cond)), "timeout_s": cond.timeout_s}, indent=2))
+        return
+    common.ensure_gpg_socket_dir()
+    if args.action == "prepare":
+        prepare(cond)
+    elif args.action == "verify":
+        sys.exit(0 if verify(cond) else 1)
+    else:
+        cleanup(cond)
+
+
+if __name__ == "__main__":
+    main()
