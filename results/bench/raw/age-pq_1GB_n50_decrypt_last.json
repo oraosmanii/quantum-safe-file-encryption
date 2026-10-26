@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "command": "age -d -i keys/age-pq/r50/id.txt -o tmp/bench/out/age-pq_1GB_n50_decrypt_last.bin tmp/bench/ct/age-pq_1GB_n50.age",
+      "mean": 1.4118171009999998,
+      "stddev": 0.17169749012399033,
+      "median": 1.476932734,
+      "user": 0.5643113333333333,
+      "system": 1.0555823333333334,
+      "min": 1.217086556,
+      "max": 1.541432013,
+      "times": [
+        1.541432013,
+        1.217086556,
+        1.476932734
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

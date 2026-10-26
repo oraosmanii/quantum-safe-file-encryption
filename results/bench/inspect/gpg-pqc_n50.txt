@@ -1,0 +1,362 @@
+# gpg --batch --list-packets tmp/bench/ct/gpg-pqc_1KB_n50.gpg
+# input: data/in_1KB.bin, recipients r01 ... r50, gnupg 2.5.22, exit code 0
+# --- stdout
+# off=0 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 85C3283365F5472E
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=1181 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 5FE12EDC02760A20
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=2362 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 0176FFA50C5878B9
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=3543 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid BBC7476AB25AECD0
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=4724 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 81DC565DA68303A7
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=5905 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 266905B097394AC0
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=7086 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid DB2A2E944547681D
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=8267 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid DED9791187F2379E
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=9448 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 175E6A4AF108D8D8
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=10629 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid ED9A409239193317
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=11810 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid FF36BE7296C92666
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=12991 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 073C2F1C07942325
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=14172 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 521139CD37335646
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=15353 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid F227CED73FE46AAD
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=16534 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 82D29712E0C0F9F6
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=17715 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid EE3C0DC5EC1285CE
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=18896 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 70FDB9B4F1597B03
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=20077 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid BB382360EB7CDED0
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=21258 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid D1FEDD40C350B52A
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=22439 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 8F3441065D070B07
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=23620 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 453EED11456F4741
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=24801 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 19BA19D848493FF3
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=25982 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid BB6CC7ECD4B8D24C
+	session key algo: 9
+	data: [254 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=27163 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 505F0B6C225464C8
+	session key algo: 9
+	data: [254 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=28344 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 89CB6B4BE0571D80
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=29525 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 173643F11171B540
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=30706 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 9B2584570918F5FE
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=31887 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid BB1E5CC4E001BFB3
+	session key algo: 9
+	data: [254 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=33068 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 282F77BE0F3EB7DE
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=34249 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid BDA72400191F2C10
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=35430 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid B451496F15E8929A
+	session key algo: 9
+	data: [252 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=36611 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid D5C57AFC9F008A8F
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=37792 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 9738C1194CB8476A
+	session key algo: 9
+	data: [252 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=38973 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid FEFEEFA0D1A5DCF1
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=40154 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid DC7ABE460174C4A7
+	session key algo: 9
+	data: [253 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=41335 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid F2F391E4132A393E
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=42516 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid DDC783C279A2D058
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=43697 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 82918C648181007E
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=44878 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 370F8B0E61F571D4
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=46059 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 4148A11ED8C8E5D5
+	session key algo: 9
+	data: [254 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=47240 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 51FCD7FD5E617910
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=48421 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 854DE07223511831
+	session key algo: 9
+	data: [253 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=49602 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 4CA4DA07115AF372
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=50783 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid CECDFA0728C4045A
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=51964 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 5B802E37CA016E37
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=53145 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 8589DF0E58612085
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=54326 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 8E66271D989232E7
+	session key algo: 9
+	data: [254 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=55507 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 86E7AFF2C66CBC7C
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=56688 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 3BA448F2B7AA4717
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=57869 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 852532D801A0CB66
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=59050 ctb=d4 tag=20 hlen=2 plen=0 partial new-ctb
+:aead encrypted packet: cipher=9 aead=2 cb=16
+	length: unknown
+# off=59071 ctb=ad tag=11 hlen=3 plen=1040
+:literal data packet:
+	mode b (62), created 1793056139, name="in_1KB.bin",
+	raw data: 1024 bytes
+# --- stderr
+gpg: encrypted with Kyber key, ID 852532D801A0CB66
+gpg: encrypted with Kyber key, ID 3BA448F2B7AA4717
+gpg: encrypted with Kyber key, ID 86E7AFF2C66CBC7C
+gpg: encrypted with Kyber key, ID 8E66271D989232E7
+gpg: encrypted with Kyber key, ID 8589DF0E58612085
+gpg: encrypted with Kyber key, ID 5B802E37CA016E37
+gpg: encrypted with Kyber key, ID CECDFA0728C4045A
+gpg: encrypted with Kyber key, ID 4CA4DA07115AF372
+gpg: encrypted with Kyber key, ID 854DE07223511831
+gpg: encrypted with Kyber key, ID 51FCD7FD5E617910
+gpg: encrypted with Kyber key, ID 4148A11ED8C8E5D5
+gpg: encrypted with Kyber key, ID 370F8B0E61F571D4
+gpg: encrypted with Kyber key, ID 82918C648181007E
+gpg: encrypted with Kyber key, ID DDC783C279A2D058
+gpg: encrypted with Kyber key, ID F2F391E4132A393E
+gpg: encrypted with Kyber key, ID DC7ABE460174C4A7
+gpg: encrypted with Kyber key, ID FEFEEFA0D1A5DCF1
+gpg: encrypted with Kyber key, ID 9738C1194CB8476A
+gpg: encrypted with Kyber key, ID D5C57AFC9F008A8F
+gpg: encrypted with Kyber key, ID B451496F15E8929A
+gpg: encrypted with Kyber key, ID BDA72400191F2C10
+gpg: encrypted with Kyber key, ID 282F77BE0F3EB7DE
+gpg: encrypted with Kyber key, ID BB1E5CC4E001BFB3
+gpg: encrypted with Kyber key, ID 9B2584570918F5FE
+gpg: encrypted with Kyber key, ID 173643F11171B540
+gpg: encrypted with Kyber key, ID 89CB6B4BE0571D80
+gpg: encrypted with Kyber key, ID 505F0B6C225464C8
+gpg: encrypted with Kyber key, ID BB6CC7ECD4B8D24C
+gpg: encrypted with Kyber key, ID 19BA19D848493FF3
+gpg: encrypted with Kyber key, ID 453EED11456F4741
+gpg: encrypted with Kyber key, ID 8F3441065D070B07
+gpg: encrypted with Kyber key, ID D1FEDD40C350B52A
+gpg: encrypted with Kyber key, ID BB382360EB7CDED0
+gpg: encrypted with Kyber key, ID 70FDB9B4F1597B03
+gpg: encrypted with Kyber key, ID EE3C0DC5EC1285CE
+gpg: encrypted with Kyber key, ID 82D29712E0C0F9F6
+gpg: encrypted with Kyber key, ID F227CED73FE46AAD
+gpg: encrypted with Kyber key, ID 521139CD37335646
+gpg: encrypted with Kyber key, ID 073C2F1C07942325
+gpg: encrypted with Kyber key, ID FF36BE7296C92666
+gpg: encrypted with Kyber key, ID ED9A409239193317
+gpg: encrypted with Kyber key, ID 175E6A4AF108D8D8
+gpg: encrypted with Kyber key, ID DED9791187F2379E
+gpg: encrypted with Kyber key, ID DB2A2E944547681D
+gpg: encrypted with Kyber key, ID 266905B097394AC0
+gpg: encrypted with Kyber key, ID 81DC565DA68303A7
+gpg: encrypted with Kyber key, ID BBC7476AB25AECD0
+gpg: encrypted with Kyber key, ID 0176FFA50C5878B9
+gpg: encrypted with Kyber key, ID 5FE12EDC02760A20
+gpg: encrypted with ky768_cv25519 key, ID 85C3283365F5472E, created 2026-10-26
+      "r01 <r01@pqc-bench.test>"

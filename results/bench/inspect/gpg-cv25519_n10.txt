@@ -1,0 +1,62 @@
+# gpg --batch --list-packets tmp/bench/ct/gpg-cv25519_1KB_n10.gpg
+# input: data/in_1KB.bin, recipients r01 ... r10, gnupg 2.5.22, exit code 0
+# --- stdout
+# off=0 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 61C469D26DE1774A
+	data: [263 bits]
+	data: [392 bits]
+# off=96 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 4D7CC98B04174F32
+	data: [263 bits]
+	data: [392 bits]
+# off=192 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 050BB7EFF5F63966
+	data: [263 bits]
+	data: [392 bits]
+# off=288 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid D19F86354DBCB205
+	data: [263 bits]
+	data: [392 bits]
+# off=384 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 33D2F0BC40AAD458
+	data: [263 bits]
+	data: [392 bits]
+# off=480 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 5F6C9D725B559028
+	data: [263 bits]
+	data: [392 bits]
+# off=576 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid C73D432CE6ACA88D
+	data: [263 bits]
+	data: [392 bits]
+# off=672 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid E218572CAB9D4C4B
+	data: [263 bits]
+	data: [392 bits]
+# off=768 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 0B91A734CFFD3CA7
+	data: [263 bits]
+	data: [392 bits]
+# off=864 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid D95F9340ED95A704
+	data: [263 bits]
+	data: [392 bits]
+# off=960 ctb=d4 tag=20 hlen=2 plen=0 partial new-ctb
+:aead encrypted packet: cipher=9 aead=2 cb=16
+	length: unknown
+# off=981 ctb=ad tag=11 hlen=3 plen=1040
+:literal data packet:
+	mode b (62), created 1793056128, name="in_1KB.bin",
+	raw data: 1024 bytes
+# --- stderr
+gpg: encrypted with ECDH key, ID D95F9340ED95A704
+gpg: encrypted with ECDH key, ID 0B91A734CFFD3CA7
+gpg: encrypted with ECDH key, ID E218572CAB9D4C4B
+gpg: encrypted with ECDH key, ID C73D432CE6ACA88D
+gpg: encrypted with ECDH key, ID 5F6C9D725B559028
+gpg: encrypted with ECDH key, ID 33D2F0BC40AAD458
+gpg: encrypted with ECDH key, ID D19F86354DBCB205
+gpg: encrypted with ECDH key, ID 050BB7EFF5F63966
+gpg: encrypted with ECDH key, ID 4D7CC98B04174F32
+gpg: encrypted with cv25519 key, ID 61C469D26DE1774A, created 2026-10-26
+      "r01 <r01@pqc-bench.test>"

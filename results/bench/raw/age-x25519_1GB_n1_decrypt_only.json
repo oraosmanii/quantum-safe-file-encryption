@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "command": "age -d -i keys/age-x25519/r01/id.txt -o tmp/bench/out/age-x25519_1GB_n1_decrypt_only.bin tmp/bench/ct/age-x25519_1GB_n1.age",
+      "mean": 1.4686234463333336,
+      "stddev": 0.1910013954828569,
+      "median": 1.5614691930000002,
+      "user": 0.5947793333333333,
+      "system": 1.098029333333333,
+      "min": 1.248948492,
+      "max": 1.595452654,
+      "times": [
+        1.595452654,
+        1.5614691930000002,
+        1.248948492
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

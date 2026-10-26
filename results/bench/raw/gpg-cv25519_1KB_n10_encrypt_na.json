@@ -1,0 +1,38 @@
+{
+  "results": [
+    {
+      "command": "gpg --batch --yes --pinentry-mode loopback --trust-model always --compress-algo none -r 36521163E8985ADD599892C191730C588E0BA7FE -r D2DF653E01A11C302F0BC8FE6B57366510530A75 -r 10852A885B3A53255D95EAD60ED650944F4D4DC6 -r 83C8324D20FAB0ADB78FEB45F7A10CC77E9B5C3C -r 33F14A051D6444C21DCEBB258D36C791DDD603C8 -r F070017E1AD7192689E05DB5D3B43A0BC4EFB278 -r FA07E17999E3D1D0E8D625C06A82A2F43DD0A14C -r 2D3ED7D6048FB4F35CC637D8F625DC99A491AE3F -r CEAE9230F4AC59B81F92AF5519CE4E73BEDC0B3E -r 36063BCC6A4E82E2064F285E5FAE52CC50069DA3 -o tmp/bench/out/gpg-cv25519_1KB_n10_encrypt_na.gpg -e data/in_1KB.bin",
+      "mean": 0.005215275500000001,
+      "stddev": 0.00036784316476311545,
+      "median": 0.005058003,
+      "user": 0.0026138999999999997,
+      "system": 0.0022566,
+      "min": 0.004798239,
+      "max": 0.005981898,
+      "times": [
+        0.005981898,
+        0.005621175,
+        0.004973118,
+        0.005348510000000001,
+        0.005052463,
+        0.004957528,
+        0.005397548,
+        0.004958733,
+        0.004798239,
+        0.005063543
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

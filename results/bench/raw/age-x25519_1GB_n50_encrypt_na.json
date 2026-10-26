@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "command": "age -R keys/age-x25519/recipients_n50.txt -o tmp/bench/out/age-x25519_1GB_n50_encrypt_na.age data/in_1GB.bin",
+      "mean": 1.048821509,
+      "stddev": 0.005229221665226174,
+      "median": 1.04767984,
+      "user": 0.39008466666666664,
+      "system": 0.7199239999999999,
+      "min": 1.044257443,
+      "max": 1.054527244,
+      "times": [
+        1.054527244,
+        1.04767984,
+        1.044257443
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

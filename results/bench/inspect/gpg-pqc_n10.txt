@@ -1,0 +1,82 @@
+# gpg --batch --list-packets tmp/bench/ct/gpg-pqc_1KB_n10.gpg
+# input: data/in_1KB.bin, recipients r01 ... r10, gnupg 2.5.22, exit code 0
+# --- stdout
+# off=0 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 85C3283365F5472E
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=1181 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 5FE12EDC02760A20
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=2362 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 0176FFA50C5878B9
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=3543 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid BBC7476AB25AECD0
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=4724 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 81DC565DA68303A7
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=5905 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 266905B097394AC0
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=7086 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid DB2A2E944547681D
+	session key algo: 9
+	data: [256 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=8267 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid DED9791187F2379E
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=9448 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 175E6A4AF108D8D8
+	session key algo: 9
+	data: [252 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=10629 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid ED9A409239193317
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=11810 ctb=d4 tag=20 hlen=2 plen=0 partial new-ctb
+:aead encrypted packet: cipher=9 aead=2 cb=16
+	length: unknown
+# off=11831 ctb=ad tag=11 hlen=3 plen=1040
+:literal data packet:
+	mode b (62), created 1793056139, name="in_1KB.bin",
+	raw data: 1024 bytes
+# --- stderr
+gpg: encrypted with Kyber key, ID ED9A409239193317
+gpg: encrypted with Kyber key, ID 175E6A4AF108D8D8
+gpg: encrypted with Kyber key, ID DED9791187F2379E
+gpg: encrypted with Kyber key, ID DB2A2E944547681D
+gpg: encrypted with Kyber key, ID 266905B097394AC0
+gpg: encrypted with Kyber key, ID 81DC565DA68303A7
+gpg: encrypted with Kyber key, ID BBC7476AB25AECD0
+gpg: encrypted with Kyber key, ID 0176FFA50C5878B9
+gpg: encrypted with Kyber key, ID 5FE12EDC02760A20
+gpg: encrypted with ky768_cv25519 key, ID 85C3283365F5472E, created 2026-10-26
+      "r01 <r01@pqc-bench.test>"

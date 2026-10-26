@@ -1,0 +1,29 @@
+# age-inspect tmp/bench/ct/age-x25519_1KB_n10.age
+# input: data/in_1KB.bin, recipients r01 ... r10, age 1.3.1, exit code 0
+# --- stdout
+tmp/bench/ct/age-x25519_1KB_n10.age is an age file, version "age-encryption.org/v1".
+
+This file is encrypted to the following recipient types:
+  - "X25519"
+  - "X25519"
+  - "X25519"
+  - "X25519"
+  - "X25519"
+  - "X25519"
+  - "X25519"
+  - "X25519"
+  - "X25519"
+  - "X25519"
+
+This file does NOT use post-quantum encryption.
+
+Size breakdown (assuming it decrypts successfully):
+
+    Header                      1050 bytes
+    Encryption overhead           32 bytes
+    Payload                     1024 bytes
+                        -------------------
+    Total                       2106 bytes
+
+Tip: for machine-readable output, use --json.
+# --- stderr
