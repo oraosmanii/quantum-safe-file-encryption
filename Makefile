@@ -2,6 +2,9 @@
 # Targets marked TODO are stubs and fail until they are implemented.
 
 IMAGE := pqc-bench
+# The analysis runs on the host with the pinned packages from requirements.txt
+# (python3 -m venv .venv && .venv/bin/pip install -r requirements.txt).
+PYTHON ?= python3
 DOCKER_RUN := docker run --rm -v "$(CURDIR):/work" -w /work $(IMAGE)
 
 .PHONY: all image smoke inputs env bench interop figures
@@ -28,5 +31,10 @@ bench:
 interop:
 	@echo "TODO: interop/run_matrix.py (Person B)" && false
 
+# Sanity checks first: no figure is made from incomplete or invalid data.
 figures:
-	@echo "TODO: analysis pipeline and interop/make_table.py (Persons C and B)" && false
+	$(PYTHON) analysis/sanity.py --phase full
+	$(PYTHON) analysis/figures.py --phase full
+	$(PYTHON) analysis/tables.py --phase full
+	@test -f interop/make_table.py || { echo "error: interop/make_table.py (Person B) is missing" >&2; exit 1; }
+	$(DOCKER_RUN) python3 interop/make_table.py

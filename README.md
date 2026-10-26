@@ -119,7 +119,13 @@ Interop matrix (RQ4).
 make figures
 ```
 
-Regenerates every figure and table from `results/`.
+Regenerates every figure and table from `results/`. It runs on the host and needs the pinned analysis packages first:
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+```
+
+Then run `make figures PYTHON=.venv/bin/python`. It starts with `analysis/sanity.py`, which stops everything if a condition or run is missing, an exit code is not 0, or a SHA-256 check failed, and which lists noisy conditions (IQR above 20% of the median). Then `analysis/figures.py` writes `figures/*.pdf`, and `analysis/tables.py` writes `tables/*.tex`: medians with IQR, PQ/classical ratios with 95% bootstrap confidence intervals, and a cost decomposition `a + b·recipients + c·bytes` per mode.
 
 Full runs take hours and are done once, on the measurement machine, with nothing else running. All scripts are resumable and skip conditions whose output already exists.
 
