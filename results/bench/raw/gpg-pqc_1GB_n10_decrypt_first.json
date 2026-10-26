@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "command": "gpg --batch --yes --pinentry-mode loopback --trust-model always -o tmp/bench/out/gpg-pqc_1GB_n10_decrypt_first.bin -d tmp/bench/ct/gpg-pqc_1GB_n10.gpg",
+      "mean": 0.9901057736666665,
+      "stddev": 0.2415555742593062,
+      "median": 0.861494551,
+      "user": 0.15129966666666667,
+      "system": 0.876068,
+      "min": 0.840067128,
+      "max": 1.268755642,
+      "times": [
+        0.840067128,
+        1.268755642,
+        0.861494551
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

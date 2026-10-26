@@ -4,7 +4,7 @@
 # off=0 ctb=85 tag=1 hlen=3 plen=1178
 :pubkey enc packet: version 3, algo 8, keyid 85C3283365F5472E
 	session key algo: 9
-	data: [256 bits]
+	data: [255 bits]
 	data: [8704 bits]
 	data: [320 bits]
 # off=1181 ctb=85 tag=1 hlen=3 plen=1178
@@ -16,25 +16,25 @@
 # off=2362 ctb=85 tag=1 hlen=3 plen=1178
 :pubkey enc packet: version 3, algo 8, keyid 0176FFA50C5878B9
 	session key algo: 9
-	data: [256 bits]
+	data: [255 bits]
 	data: [8704 bits]
 	data: [320 bits]
 # off=3543 ctb=85 tag=1 hlen=3 plen=1178
 :pubkey enc packet: version 3, algo 8, keyid BBC7476AB25AECD0
 	session key algo: 9
-	data: [255 bits]
+	data: [256 bits]
 	data: [8704 bits]
 	data: [320 bits]
 # off=4724 ctb=85 tag=1 hlen=3 plen=1178
 :pubkey enc packet: version 3, algo 8, keyid 81DC565DA68303A7
 	session key algo: 9
-	data: [256 bits]
+	data: [255 bits]
 	data: [8704 bits]
 	data: [320 bits]
 # off=5905 ctb=85 tag=1 hlen=3 plen=1178
 :pubkey enc packet: version 3, algo 8, keyid 266905B097394AC0
 	session key algo: 9
-	data: [255 bits]
+	data: [256 bits]
 	data: [8704 bits]
 	data: [320 bits]
 # off=7086 ctb=85 tag=1 hlen=3 plen=1178
@@ -46,19 +46,19 @@
 # off=8267 ctb=85 tag=1 hlen=3 plen=1178
 :pubkey enc packet: version 3, algo 8, keyid DED9791187F2379E
 	session key algo: 9
-	data: [254 bits]
+	data: [255 bits]
 	data: [8704 bits]
 	data: [320 bits]
 # off=9448 ctb=85 tag=1 hlen=3 plen=1178
 :pubkey enc packet: version 3, algo 8, keyid 175E6A4AF108D8D8
 	session key algo: 9
-	data: [256 bits]
+	data: [252 bits]
 	data: [8704 bits]
 	data: [320 bits]
 # off=10629 ctb=85 tag=1 hlen=3 plen=1178
 :pubkey enc packet: version 3, algo 8, keyid ED9A409239193317
 	session key algo: 9
-	data: [256 bits]
+	data: [255 bits]
 	data: [8704 bits]
 	data: [320 bits]
 # off=11810 ctb=d4 tag=20 hlen=2 plen=0 partial new-ctb
@@ -66,7 +66,7 @@
 	length: unknown
 # off=11831 ctb=ad tag=11 hlen=3 plen=1040
 :literal data packet:
-	mode b (62), created 1793054690, name="in_1KB.bin",
+	mode b (62), created 1793056139, name="in_1KB.bin",
 	raw data: 1024 bytes
 # --- stderr
 gpg: encrypted with Kyber key, ID ED9A409239193317

@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "command": "gpg --batch --yes --pinentry-mode loopback --trust-model always -o tmp/bench/out/gpg-cv25519_1GB_n50_decrypt_first.bin -d tmp/bench/ct/gpg-cv25519_1GB_n50.gpg",
+      "mean": 0.9418816823333334,
+      "stddev": 0.23721745726253785,
+      "median": 0.8108335510000001,
+      "user": 0.14150566666666667,
+      "system": 0.8325499999999999,
+      "min": 0.799098493,
+      "max": 1.215713003,
+      "times": [
+        0.8108335510000001,
+        0.799098493,
+        1.215713003
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}
