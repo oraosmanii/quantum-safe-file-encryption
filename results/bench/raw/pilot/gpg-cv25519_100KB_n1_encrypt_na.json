@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "command": "gpg --batch --yes --pinentry-mode loopback --trust-model always --compress-algo none -r 36521163E8985ADD599892C191730C588E0BA7FE -o tmp/bench/out/gpg-cv25519_100KB_n1_encrypt_na.gpg -e data/in_100KB.bin",
+      "mean": 0.00259678,
+      "stddev": 0.0001536712741145853,
+      "median": 0.00259678,
+      "user": 0.0009639999999999999,
+      "system": 0.0010574999999999998,
+      "min": 0.002488118,
+      "max": 0.002705442,
+      "times": [
+        0.002705442,
+        0.002488118
+      ],
+      "exit_codes": [
+        0,
+        0
+      ]
+    }
+  ]
+}

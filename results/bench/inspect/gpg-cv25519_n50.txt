@@ -1,0 +1,262 @@
+# gpg --batch --list-packets tmp/bench/ct/gpg-cv25519_1KB_n50.gpg
+# input: data/in_1KB.bin, recipients r01 ... r50, gnupg 2.5.22, exit code 0
+# --- stdout
+# off=0 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 61C469D26DE1774A
+	data: [263 bits]
+	data: [392 bits]
+# off=96 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 4D7CC98B04174F32
+	data: [263 bits]
+	data: [392 bits]
+# off=192 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 050BB7EFF5F63966
+	data: [263 bits]
+	data: [392 bits]
+# off=288 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid D19F86354DBCB205
+	data: [263 bits]
+	data: [392 bits]
+# off=384 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 33D2F0BC40AAD458
+	data: [263 bits]
+	data: [392 bits]
+# off=480 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 5F6C9D725B559028
+	data: [263 bits]
+	data: [392 bits]
+# off=576 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid C73D432CE6ACA88D
+	data: [263 bits]
+	data: [392 bits]
+# off=672 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid E218572CAB9D4C4B
+	data: [263 bits]
+	data: [392 bits]
+# off=768 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 0B91A734CFFD3CA7
+	data: [263 bits]
+	data: [392 bits]
+# off=864 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid D95F9340ED95A704
+	data: [263 bits]
+	data: [392 bits]
+# off=960 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 20255A807856F706
+	data: [263 bits]
+	data: [392 bits]
+# off=1056 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 26B2A41B29E790CE
+	data: [263 bits]
+	data: [392 bits]
+# off=1152 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 2372D46435F965B4
+	data: [263 bits]
+	data: [392 bits]
+# off=1248 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 2C859F7963096B3C
+	data: [263 bits]
+	data: [392 bits]
+# off=1344 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 8FE0FC4ED962B2BF
+	data: [263 bits]
+	data: [392 bits]
+# off=1440 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 9E190FE6188A39DA
+	data: [263 bits]
+	data: [392 bits]
+# off=1536 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 24618C4B8FC542EF
+	data: [263 bits]
+	data: [392 bits]
+# off=1632 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid FDE41B84331F9F2B
+	data: [263 bits]
+	data: [392 bits]
+# off=1728 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid E30835E61A29CE32
+	data: [263 bits]
+	data: [392 bits]
+# off=1824 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 9EC0631B5F75703A
+	data: [263 bits]
+	data: [392 bits]
+# off=1920 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid C955949B8680CEF3
+	data: [263 bits]
+	data: [392 bits]
+# off=2016 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 5B4E4740ACB128AA
+	data: [263 bits]
+	data: [392 bits]
+# off=2112 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid FCB2A84B45116B74
+	data: [263 bits]
+	data: [392 bits]
+# off=2208 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 1F904CE9FE0E9D31
+	data: [263 bits]
+	data: [392 bits]
+# off=2304 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 36E22CFBD25F2F83
+	data: [263 bits]
+	data: [392 bits]
+# off=2400 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 4D002C532290D58C
+	data: [263 bits]
+	data: [392 bits]
+# off=2496 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 62BE911A2994C27B
+	data: [263 bits]
+	data: [392 bits]
+# off=2592 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 9D0B89D26220E5E6
+	data: [263 bits]
+	data: [392 bits]
+# off=2688 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid B59FCB3C09F0492C
+	data: [263 bits]
+	data: [392 bits]
+# off=2784 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 67435212A61CB9C3
+	data: [263 bits]
+	data: [392 bits]
+# off=2880 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid B01FA6C21AC4616E
+	data: [263 bits]
+	data: [392 bits]
+# off=2976 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid F9330E28F9160918
+	data: [263 bits]
+	data: [392 bits]
+# off=3072 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 0FE92D512B145174
+	data: [263 bits]
+	data: [392 bits]
+# off=3168 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid CEA464C5B33949B6
+	data: [263 bits]
+	data: [392 bits]
+# off=3264 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 8A9B7E6C8EE6C74B
+	data: [263 bits]
+	data: [392 bits]
+# off=3360 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 91A2C658C1AEEAD2
+	data: [263 bits]
+	data: [392 bits]
+# off=3456 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 0E0D2BA6D84BA511
+	data: [263 bits]
+	data: [392 bits]
+# off=3552 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid F12A208F899474A1
+	data: [263 bits]
+	data: [392 bits]
+# off=3648 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 899C4179E65425B2
+	data: [263 bits]
+	data: [392 bits]
+# off=3744 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 5A1D2EA14316C11E
+	data: [263 bits]
+	data: [392 bits]
+# off=3840 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid B241E065B40BC848
+	data: [263 bits]
+	data: [392 bits]
+# off=3936 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 4C7DB0663D35DA0B
+	data: [263 bits]
+	data: [392 bits]
+# off=4032 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 115DC4D8E9EC4466
+	data: [263 bits]
+	data: [392 bits]
+# off=4128 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid CBB761EC5C9A809F
+	data: [263 bits]
+	data: [392 bits]
+# off=4224 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 2D57E17CB194A0E2
+	data: [263 bits]
+	data: [392 bits]
+# off=4320 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid B8FAB306A0D78102
+	data: [263 bits]
+	data: [392 bits]
+# off=4416 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 664EFC709B424F29
+	data: [263 bits]
+	data: [392 bits]
+# off=4512 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 53D685B292D82458
+	data: [263 bits]
+	data: [392 bits]
+# off=4608 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid A4F27DFF241F099B
+	data: [263 bits]
+	data: [392 bits]
+# off=4704 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid A7146E153FFFDCBF
+	data: [263 bits]
+	data: [392 bits]
+# off=4800 ctb=d4 tag=20 hlen=2 plen=0 partial new-ctb
+:aead encrypted packet: cipher=9 aead=2 cb=16
+	length: unknown
+# off=4821 ctb=ad tag=11 hlen=3 plen=1040
+:literal data packet:
+	mode b (62), created 1793054690, name="in_1KB.bin",
+	raw data: 1024 bytes
+# --- stderr
+gpg: encrypted with ECDH key, ID A7146E153FFFDCBF
+gpg: encrypted with ECDH key, ID A4F27DFF241F099B
+gpg: encrypted with ECDH key, ID 53D685B292D82458
+gpg: encrypted with ECDH key, ID 664EFC709B424F29
+gpg: encrypted with ECDH key, ID B8FAB306A0D78102
+gpg: encrypted with ECDH key, ID 2D57E17CB194A0E2
+gpg: encrypted with ECDH key, ID CBB761EC5C9A809F
+gpg: encrypted with ECDH key, ID 115DC4D8E9EC4466
+gpg: encrypted with ECDH key, ID 4C7DB0663D35DA0B
+gpg: encrypted with ECDH key, ID B241E065B40BC848
+gpg: encrypted with ECDH key, ID 5A1D2EA14316C11E
+gpg: encrypted with ECDH key, ID 899C4179E65425B2
+gpg: encrypted with ECDH key, ID F12A208F899474A1
+gpg: encrypted with ECDH key, ID 0E0D2BA6D84BA511
+gpg: encrypted with ECDH key, ID 91A2C658C1AEEAD2
+gpg: encrypted with ECDH key, ID 8A9B7E6C8EE6C74B
+gpg: encrypted with ECDH key, ID CEA464C5B33949B6
+gpg: encrypted with ECDH key, ID 0FE92D512B145174
+gpg: encrypted with ECDH key, ID F9330E28F9160918
+gpg: encrypted with ECDH key, ID B01FA6C21AC4616E
+gpg: encrypted with ECDH key, ID 67435212A61CB9C3
+gpg: encrypted with ECDH key, ID B59FCB3C09F0492C
+gpg: encrypted with ECDH key, ID 9D0B89D26220E5E6
+gpg: encrypted with ECDH key, ID 62BE911A2994C27B
+gpg: encrypted with ECDH key, ID 4D002C532290D58C
+gpg: encrypted with ECDH key, ID 36E22CFBD25F2F83
+gpg: encrypted with ECDH key, ID 1F904CE9FE0E9D31
+gpg: encrypted with ECDH key, ID FCB2A84B45116B74
+gpg: encrypted with ECDH key, ID 5B4E4740ACB128AA
+gpg: encrypted with ECDH key, ID C955949B8680CEF3
+gpg: encrypted with ECDH key, ID 9EC0631B5F75703A
+gpg: encrypted with ECDH key, ID E30835E61A29CE32
+gpg: encrypted with ECDH key, ID FDE41B84331F9F2B
+gpg: encrypted with ECDH key, ID 24618C4B8FC542EF
+gpg: encrypted with ECDH key, ID 9E190FE6188A39DA
+gpg: encrypted with ECDH key, ID 8FE0FC4ED962B2BF
+gpg: encrypted with ECDH key, ID 2C859F7963096B3C
+gpg: encrypted with ECDH key, ID 2372D46435F965B4
+gpg: encrypted with ECDH key, ID 26B2A41B29E790CE
+gpg: encrypted with ECDH key, ID 20255A807856F706
+gpg: encrypted with ECDH key, ID D95F9340ED95A704
+gpg: encrypted with ECDH key, ID 0B91A734CFFD3CA7
+gpg: encrypted with ECDH key, ID E218572CAB9D4C4B
+gpg: encrypted with ECDH key, ID C73D432CE6ACA88D
+gpg: encrypted with ECDH key, ID 5F6C9D725B559028
+gpg: encrypted with ECDH key, ID 33D2F0BC40AAD458
+gpg: encrypted with ECDH key, ID D19F86354DBCB205
+gpg: encrypted with ECDH key, ID 050BB7EFF5F63966
+gpg: encrypted with ECDH key, ID 4D7CC98B04174F32
+gpg: encrypted with cv25519 key, ID 61C469D26DE1774A, created 2026-10-26
+      "r01 <r01@pqc-bench.test>"

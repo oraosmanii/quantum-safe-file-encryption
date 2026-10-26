@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "command": "age -R keys/age-pq/recipients_n1.txt -o tmp/bench/out/age-pq_100KB_n1_encrypt_na.age data/in_100KB.bin",
+      "mean": 0.004742586,
+      "stddev": 0.00013379450249543145,
+      "median": 0.004742586,
+      "user": 0.0,
+      "system": 0.0053305,
+      "min": 0.004647979,
+      "max": 0.004837193,
+      "times": [
+        0.004837193,
+        0.004647979
+      ],
+      "exit_codes": [
+        0,
+        0
+      ]
+    }
+  ]
+}

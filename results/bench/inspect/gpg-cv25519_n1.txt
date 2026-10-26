@@ -1,0 +1,17 @@
+# gpg --batch --list-packets tmp/bench/ct/gpg-cv25519_1KB_n1.gpg
+# input: data/in_1KB.bin, recipients r01 ... r01, gnupg 2.5.22, exit code 0
+# --- stdout
+# off=0 ctb=84 tag=1 hlen=2 plen=94
+:pubkey enc packet: version 3, algo 18, keyid 61C469D26DE1774A
+	data: [263 bits]
+	data: [392 bits]
+# off=96 ctb=d4 tag=20 hlen=2 plen=0 partial new-ctb
+:aead encrypted packet: cipher=9 aead=2 cb=16
+	length: unknown
+# off=117 ctb=ad tag=11 hlen=3 plen=1040
+:literal data packet:
+	mode b (62), created 1793054690, name="in_1KB.bin",
+	raw data: 1024 bytes
+# --- stderr
+gpg: encrypted with cv25519 key, ID 61C469D26DE1774A, created 2026-10-26
+      "r01 <r01@pqc-bench.test>"

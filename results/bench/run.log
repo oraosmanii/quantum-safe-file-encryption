@@ -8,3 +8,14 @@
 2026-10-26T21:43:49Z WARN run_resources: results/env.json records a dirty working tree
 2026-10-26T21:43:50Z INFO run_resources: phase full, seed 3938290242: 129 to run, 0 already done
 2026-10-26T22:08:46Z INFO run_resources: phase full: done
+2026-10-26T22:44:49Z INFO run_all: start phase pilot
+2026-10-26T22:44:49Z INFO gen_keys: age-x25519: 0 new, 50 kept
+2026-10-26T22:44:49Z INFO gen_keys: age-pq: 0 new, 50 kept
+2026-10-26T22:44:49Z INFO gen_keys: gpg-cv25519: 0 new, 50 kept
+2026-10-26T22:44:49Z INFO gen_keys: gpg-pqc: 0 new, 50 kept
+2026-10-26T22:44:50Z INFO gen_keys: wrote keys/MANIFEST.csv
+2026-10-26T22:44:50Z INFO sizes: results/bench/key_sizes.csv: 200 rows measured, 0 kept
+2026-10-26T22:44:51Z INFO sizes: results/bench/sizes.csv: 24 rows measured, 0 kept
+2026-10-26T22:44:51Z INFO run_timing: phase pilot, seed 227556195: 64 to run, 0 already done
+2026-10-26T22:44:57Z INFO run_timing: phase pilot: done
+2026-10-26T22:44:57Z INFO run_all: end phase pilot

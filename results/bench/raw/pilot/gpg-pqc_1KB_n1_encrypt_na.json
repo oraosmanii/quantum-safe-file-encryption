@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "command": "gpg --batch --yes --pinentry-mode loopback --trust-model always --compress-algo none -r FAD785241443340CD61F0D2540DBDE9F681858DE -o tmp/bench/out/gpg-pqc_1KB_n1_encrypt_na.gpg -e data/in_1KB.bin",
+      "mean": 0.012771420500000002,
+      "stddev": 0.00025348576024009816,
+      "median": 0.012771420500000002,
+      "user": 0.010512999999999998,
+      "system": 0.0022264999999999997,
+      "min": 0.012592179,
+      "max": 0.012950662000000002,
+      "times": [
+        0.012592179,
+        0.012950662000000002
+      ],
+      "exit_codes": [
+        0,
+        0
+      ]
+    }
+  ]
+}
