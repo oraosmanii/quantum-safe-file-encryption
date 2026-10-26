@@ -1,0 +1,16 @@
+# Only interop/gopenpgp-cli/ is copied into the image (docker/Dockerfile, stage 4).
+# The rest stays out of the build context: keys/ holds root-only gpg homes after a
+# benchmark run, which made `make image` fail, and data/ holds the 1 GB input.
+# Plain excludes only: an exception (!) would make Docker walk into keys/ again.
+.git
+keys
+data
+tmp
+results
+figures
+tables
+analysis
+bench
+measure
+.venv
+**/__pycache__
