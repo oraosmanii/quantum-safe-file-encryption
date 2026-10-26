@@ -20,6 +20,7 @@ call or hash check is recorded in the rows, then the run stops so it can be inve
 """
 
 import argparse
+import os
 import random
 import sys
 
@@ -67,6 +68,21 @@ def tool_version(tool):
         else:
             raise ValueError(f"unknown tool: {tool}")
     return _versions[tool]
+
+
+def ensure_writable(paths):
+    """Give root-owned result files back to the host user, so this host script can append.
+
+    The scripts in the image run as root, so a file they create first (results/bench/run.log
+    from bench/run_all.py) belongs to root on a Linux host, and appending to it fails here.
+    The container can still write the file afterwards, because it runs as root.
+    """
+    if not hasattr(os, "getuid"):
+        return
+    stuck = [rel for rel in paths
+             if common.path(rel).exists() and not os.access(common.path(rel), os.W_OK)]
+    if stuck:
+        in_image(["chown", f"{os.getuid()}:{os.getgid()}", *stuck])
 
 
 def load_seed(requested):
@@ -136,6 +152,7 @@ def drop_rows(rel, header, phase, keep_row):
 
 def run(phase, force=False, seed=None, only=None):
     """Measure the phase's conditions; return False if one failed (the run stops there)."""
+    ensure_writable([common.RUN_LOG, RESOURCES, BASELINE, SEED_FILE])
     if phase == "full":
         common.check_full_run_ready(SCRIPT)
     common.check_inputs([input_path(s) for s in PHASE_SIZES[phase]])
