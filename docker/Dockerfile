@@ -170,4 +170,9 @@ COPY --from=gopenpgp-build /opt/gopenpgp-cli /usr/local/bin/gopenpgp-cli
 RUN echo /opt/gnupg/lib > /etc/ld.so.conf.d/gnupg.conf && ldconfig
 ENV PATH=/opt/gnupg/bin:$PATH
 
+# gpg-agent puts its sockets here instead of into GNUPGHOME under the bind-mounted keys/.
+# A container's agent is killed on exit without removing its sockets, and stale sockets
+# in keys/ stop the next fresh container's agent from starting (NOTES.md).
+RUN mkdir -p -m 700 /run/user/0
+
 WORKDIR /work

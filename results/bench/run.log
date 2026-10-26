@@ -1,0 +1,10 @@
+2026-10-26T21:35:42Z INFO gen_keys: age-x25519: 50 new, 0 kept
+2026-10-26T21:35:42Z INFO gen_keys: age-pq: 50 new, 0 kept
+2026-10-26T21:35:45Z INFO gen_keys: gpg-cv25519: 50 new, 0 kept
+2026-10-26T21:35:48Z INFO gen_keys: gpg-pqc: 50 new, 0 kept
+2026-10-26T21:35:48Z INFO gen_keys: wrote keys/MANIFEST.csv
+2026-10-26T21:37:51Z INFO run_resources: phase pilot, seed 3938290242: 65 to run, 0 already done
+2026-10-26T21:41:26Z INFO run_resources: phase pilot: done
+2026-10-26T21:43:49Z WARN run_resources: results/env.json records a dirty working tree
+2026-10-26T21:43:50Z INFO run_resources: phase full, seed 3938290242: 129 to run, 0 already done
+2026-10-26T22:08:46Z INFO run_resources: phase full: done
