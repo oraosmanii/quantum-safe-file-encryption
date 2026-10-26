@@ -107,7 +107,13 @@ Key generation, sizes (RQ1), and timing (RQ2). `--phase pilot` runs only the sma
 python3 bench/run_resources.py --phase full
 ```
 
-CPU and memory (RQ3). Runs on the **host**, because it starts one fresh container per measured run.
+CPU and memory (RQ3). Runs on the **host**, because it starts one fresh container per measured run: [`measure/run_measured.sh`](measure/run_measured.sh) reads the container cgroup's `cpu.stat` around the tool call and its `memory.peak`, and GNU time gives the tool's own max RSS. gpg-agent runs in the same cgroup, so its CPU and memory are included. `--phase pilot` runs only the small files. Before it, the measurement can be checked with:
+
+```bash
+python3 measure/validate_measured.py
+```
+
+It measures the baseline (`true`), confirms that gpg-agent is in the measured cgroup, and compares the two memory numbers.
 
 ```bash
 docker run --rm -v "$PWD:/work" -w /work pqc-bench python3 interop/run_matrix.py --repeats 3
