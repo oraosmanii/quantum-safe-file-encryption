@@ -20,6 +20,12 @@ Encrypted files can be copied today and decrypted later, once a quantum computer
 | **RQ3** | How much do CPU time and peak memory increase, and does it depend on the number of recipients? | cgroup v2 `cpu.stat` and `memory.peak`, GNU time max RSS |
 | **RQ4** | Can GnuPG's post-quantum messages be decrypted by Sequoia-PGP and GopenPGP (RFC 9980), and the other way round? If not, where does it fail? | pass/fail and failure stage (import, encrypt, decrypt) per tool pair |
 
+### Interoperability (RQ4)
+
+The RQ4 runner checks every directed pair of GnuPG, Sequoia `sq`, and GopenPGP, including each tool against itself, with classical and PQC keys. Each repeat creates fresh keys and a fresh 100 KiB random input. The runner stops at the first failed stage, records complete stderr and tool versions, and checks decrypted output with SHA-256. Classical results are the positive control.
+
+Run the three full repetitions in the pinned Docker image with `make interop`. This writes `results/interop/matrix.csv`, packet dumps under `results/interop/dumps/`, `results/interop/packets.csv`, and the two generated tables `tables/interop_matrix.tex` and `tables/interop_packets.tex`. Packet tables should be interpreted together with the raw dumps: a blank packet field means the installed dumper did not expose a matching field in its output, not that the packet property is absent.
+
 ### Experiment design
 
 | | Values |

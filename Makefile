@@ -29,7 +29,9 @@ bench:
 	@echo "TODO: bench/run_all.py (Person A). Full runs are started by a human." && false
 
 interop:
-	@echo "TODO: interop/run_matrix.py (Person B)" && false
+	$(DOCKER_RUN) python3 interop/run_matrix.py --repeat 3
+	$(DOCKER_RUN) python3 interop/diagnose.py
+	$(DOCKER_RUN) python3 interop/make_table.py
 
 # Sanity checks first: no figure is made from incomplete or invalid data.
 figures:
