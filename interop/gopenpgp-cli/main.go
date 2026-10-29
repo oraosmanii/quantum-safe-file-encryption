@@ -29,6 +29,7 @@ const usage = `usage:
   gopenpgp-cli keygen  --pqc|--classical --uid "name <email>" --out-secret FILE --out-public FILE
   gopenpgp-cli encrypt --recipient FILE --in FILE --out FILE
   gopenpgp-cli decrypt --key FILE --in FILE --out FILE
+  gopenpgp-cli validate --key FILE
   gopenpgp-cli version`
 
 func main() {
@@ -43,6 +44,8 @@ func main() {
 		err = encrypt(os.Args[2:])
 	case "decrypt":
 		err = decrypt(os.Args[2:])
+	case "validate":
+		err = validate(os.Args[2:])
 	case "version":
 		fmt.Println(libraryVersion())
 	default:
@@ -51,6 +54,21 @@ func main() {
 	if err != nil {
 		fail(err)
 	}
+}
+
+func validate(args []string) error {
+	fs := flag.NewFlagSet("validate", flag.ContinueOnError)
+	keyFile := fs.String("key", "", "public certificate or secret key file")
+	if err := fs.Parse(args); err != nil {
+		return err
+	}
+	if *keyFile == "" {
+		return errors.New("validate: --key is required")
+	}
+	if _, err := readKey(*keyFile); err != nil {
+		return fmt.Errorf("validate: load key: %w", err)
+	}
+	return nil
 }
 
 func fail(err error) {
