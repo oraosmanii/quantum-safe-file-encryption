@@ -7,6 +7,7 @@ import csv
 import hashlib
 import os
 import secrets
+import shutil
 import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
@@ -35,6 +36,11 @@ def main():
     rows = []
     for repeat in range(1, args.repeat + 1):
         repeat_dir = args.work_root / f"repeat-{repeat}"
+        # tmp/interop is scratch space. Remove only this repeat's previous scratch
+        # directory so rerunning with the same --work-root cannot reuse stale keys,
+        # keyrings, or ciphertexts.
+        if repeat_dir.exists():
+            shutil.rmtree(repeat_dir)
         repeat_dir.mkdir(parents=True, exist_ok=True)
         # Fresh 100 KiB random control file for each run; keys and homes are also fresh.
         plaintext = repeat_dir / "input.bin"

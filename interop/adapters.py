@@ -157,9 +157,12 @@ def decrypt(tool, secret_path, in_path, out_path, workdir):
 def version(tool, workdir):
     wd = Path(workdir).resolve()
     wd.mkdir(parents=True, exist_ok=True)
-    args = {"gpg": ["gpg", "--version"], "sq": ["sq", "--cli-version"],
+    args = {"gpg": ["gpg", "--version"], "sq": ["sq", "version"],
             "gopenpgp": ["gopenpgp-cli", "version"]}[tool]
     r = _run(args, wd, env=_env(tool, wd))
     if not r[0]:
         return f"unavailable (exit {r[1]}): {r[2].strip()}"
-    return (r[4].splitlines() or ["unknown"])[0].strip()
+    # sq version writes its version block to stderr; smoke_test.sh captures it
+    # with 2>&1. Other tools print their version to stdout.
+    output = (r[4] + "\n" + r[2]) if tool == "sq" else r[4]
+    return (output.splitlines() or ["unknown"])[0].strip()
