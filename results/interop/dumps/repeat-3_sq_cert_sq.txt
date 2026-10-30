@@ -1,0 +1,153 @@
+command: sq packet dump /work/tmp/interop/repeat-3/pqc/key-sq/sq-pqc.pub.pgp
+exit_code: 0
+
+Public-Key Packet, new CTB, 1994 bytes
+    Version: 6
+    Creation time: 2026-10-30 16:39:13 UTC
+    Pk algo: ML-DSA-65+Ed25519
+    Fingerprint: 60B5544C5F7EEECE371F0D400AA8D80F81F4F3B04DF2E41776105A815FF97CDF
+    KeyID: 60B5544C5F7EEECE
+  
+Signature Packet, new CTB, 3481 bytes
+    Version: 6
+    Type: DirectKey
+    Pk algo: ML-DSA-65+Ed25519
+    Hash algo: SHA512
+    Hashed area:
+      Signature creation time: 2026-10-30 16:39:13 UTC (critical)
+      Key expiration time: 2years 11months 30days 9h 16m 45s (critical)
+      Symmetric algo preferences: AES256, AES128
+      Hash preferences: SHA512, SHA256
+      Key flags: C (critical)
+      Features: SEIPDv1, SEIPDv2
+      Issuer Fingerprint: 60B5544C5F7EEECE371F0D400AA8D80F81F4F3B04DF2E41776105A815FF97CDF
+    Digest prefix: 52A0
+    Salt: A7B448E8D4CCCA3F00CF26582806B6A230531C7A503229E2205E2103E8A7CB6B
+    Level: 0 (signature over data)
+  
+User ID Packet, new CTB, 32 bytes
+    Value: <interop-sq-pqc@example.invalid>
+  
+Signature Packet, new CTB, 3481 bytes
+    Version: 6
+    Type: PositiveCertification
+    Pk algo: ML-DSA-65+Ed25519
+    Hash algo: SHA512
+    Hashed area:
+      Signature creation time: 2026-10-30 16:39:13 UTC (critical)
+      Key expiration time: 2years 11months 30days 9h 16m 45s (critical)
+      Symmetric algo preferences: AES256, AES128
+      Hash preferences: SHA512, SHA256
+      Key flags: C (critical)
+      Features: SEIPDv1, SEIPDv2
+      Issuer Fingerprint: 60B5544C5F7EEECE371F0D400AA8D80F81F4F3B04DF2E41776105A815FF97CDF
+    Digest prefix: 56D0
+    Salt: 3F31DE78D7A05D62EF336EC7F61B6AC5A55CA4C4C7004FBF28EDADD5DD25D0DE
+    Level: 0 (signature over data)
+  
+User ID Packet, new CTB, 12 bytes
+    Value: Interop Test
+  
+Signature Packet, new CTB, 3484 bytes
+    Version: 6
+    Type: PositiveCertification
+    Pk algo: ML-DSA-65+Ed25519
+    Hash algo: SHA512
+    Hashed area:
+      Signature creation time: 2026-10-30 16:39:13 UTC (critical)
+      Key expiration time: 2years 11months 30days 9h 16m 45s (critical)
+      Symmetric algo preferences: AES256, AES128
+      Hash preferences: SHA512, SHA256
+      Primary User ID: true (critical)
+      Key flags: C (critical)
+      Features: SEIPDv1, SEIPDv2
+      Issuer Fingerprint: 60B5544C5F7EEECE371F0D400AA8D80F81F4F3B04DF2E41776105A815FF97CDF
+    Digest prefix: B244
+    Salt: B6E45CC30844EEAC531AC05C0BE80239184F377B135C72A9F27A93D82374C40F
+    Level: 0 (signature over data)
+  
+Public-Subkey Packet, new CTB, 1994 bytes
+    Version: 6
+    Creation time: 2026-10-30 16:39:13 UTC
+    Pk algo: ML-DSA-65+Ed25519
+    Fingerprint: 2FCBEA0B008DE63206D5919DCC50127EDC17473FDA977CAE8461A9035EE93D8A
+    KeyID: 2FCBEA0B008DE632
+  
+Signature Packet, new CTB, 6934 bytes
+    Version: 6
+    Type: SubkeyBinding
+    Pk algo: ML-DSA-65+Ed25519
+    Hash algo: SHA512
+    Hashed area:
+      Signature creation time: 2026-10-30 16:39:13 UTC (critical)
+      Key expiration time: 2years 11months 30days 9h 16m 45s (critical)
+      Key flags: A (critical)
+      Embedded signature:  (critical)
+                  Version: 6
+          Type: PrimaryKeyBinding
+          Pk algo: ML-DSA-65+Ed25519
+          Hash algo: SHA512
+          Hashed area:
+            Signature creation time: 2026-10-30 16:39:13 UTC (critical)
+            Issuer Fingerprint: 2FCBEA0B008DE63206D5919DCC50127EDC17473FDA977CAE8461A9035EE93D8A
+          Digest prefix: 9993
+          Salt: 3BC87FE5F5748EBEA07A4F2BC39424E5180A48551FB04E3443F89467EB05EB26
+          Level: 0 (signature over data)
+      Issuer Fingerprint: 60B5544C5F7EEECE371F0D400AA8D80F81F4F3B04DF2E41776105A815FF97CDF
+    Digest prefix: E20F
+    Salt: E81333BFF96112122DDCDA2A8C6D764B841D2DC866B760700E187C2CA532B4DA
+    Level: 0 (signature over data)
+  
+Public-Subkey Packet, new CTB, 1994 bytes
+    Version: 6
+    Creation time: 2026-10-30 16:39:13 UTC
+    Pk algo: ML-DSA-65+Ed25519
+    Fingerprint: 92093A3F67848982C7475D5595F46566F46D425C27E89BDA6E8C858D3324DD9A
+    KeyID: 92093A3F67848982
+  
+Signature Packet, new CTB, 6934 bytes
+    Version: 6
+    Type: SubkeyBinding
+    Pk algo: ML-DSA-65+Ed25519
+    Hash algo: SHA512
+    Hashed area:
+      Signature creation time: 2026-10-30 16:39:13 UTC (critical)
+      Key expiration time: 2years 11months 30days 9h 16m 45s (critical)
+      Key flags: S (critical)
+      Embedded signature:  (critical)
+                  Version: 6
+          Type: PrimaryKeyBinding
+          Pk algo: ML-DSA-65+Ed25519
+          Hash algo: SHA512
+          Hashed area:
+            Signature creation time: 2026-10-30 16:39:13 UTC (critical)
+            Issuer Fingerprint: 92093A3F67848982C7475D5595F46566F46D425C27E89BDA6E8C858D3324DD9A
+          Digest prefix: 9E82
+          Salt: 502139260A4E9A9AD3E3E09625FEF53A8E57522BF505D6A1AEA8A077C9BCD6BE
+          Level: 0 (signature over data)
+      Issuer Fingerprint: 60B5544C5F7EEECE371F0D400AA8D80F81F4F3B04DF2E41776105A815FF97CDF
+    Digest prefix: 4A39
+    Salt: 673252222629EF729E4AD74DA18BADD644D39E78AB3EB1C28C002370377121BD
+    Level: 0 (signature over data)
+  
+Public-Subkey Packet, new CTB, 1226 bytes
+    Version: 6
+    Creation time: 2026-10-30 16:39:13 UTC
+    Pk algo: ML-KEM-768+X25519
+    Fingerprint: 7372FD7F936765E4ED2D6490A3BA1603B8BB9EC07C7A909EED84E7B986B692D7
+    KeyID: 7372FD7F936765E4
+  
+Signature Packet, new CTB, 3470 bytes
+    Version: 6
+    Type: SubkeyBinding
+    Pk algo: ML-DSA-65+Ed25519
+    Hash algo: SHA512
+    Hashed area:
+      Signature creation time: 2026-10-30 16:39:13 UTC (critical)
+      Key expiration time: 2years 11months 30days 9h 16m 45s (critical)
+      Key flags: EtEr (critical)
+      Issuer Fingerprint: 60B5544C5F7EEECE371F0D400AA8D80F81F4F3B04DF2E41776105A815FF97CDF
+    Digest prefix: 92AB
+    Salt: 616820268A5B925056B84551113050B6ACC3B0A8B2A94E96E1AC053874E30260
+    Level: 0 (signature over data)
+  

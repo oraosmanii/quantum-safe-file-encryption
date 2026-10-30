@@ -1,0 +1,16 @@
+command: sq packet dump /work/tmp/interop/repeat-1/pqc/gopenpgp-to-sq/ciphertext.pgp
+exit_code: 0
+
+No key to decrypt message.  The message appears to be encrypted to:
+
+ - F2E22210741651D0, certificate not found
+
+Public-Key Encrypted Session Key Packet, new CTB, 1172 bytes
+    Version: 3
+    Recipient: F2E22210741651D0
+    Pk algo: ML-KEM-768+X25519
+  
+Sym. Encrypted and Integrity Protected Data Packet, new CTB, partial length, 65536 bytes in first chunk
+    Version: 1
+    Decryption failed: No key to decrypt message
+  

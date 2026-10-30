@@ -1,0 +1,15 @@
+command: gpg --batch --list-packets /work/tmp/interop/repeat-1/pqc/sq-to-sq/ciphertext.pgp
+exit_code: 2
+
+gpg: packet(1) with unknown version 6
+gpg: encrypted_mdc packet with unknown version 2
+gpg: [don't know]: invalid packet (ctb=09)
+gpg: [don't know]: invalid packet (ctb=02)
+gpg: [don't know]: invalid packet (ctb=06)
+gpg: packet(7) with unknown version 174
+# off=0 ctb=c1 tag=1 hlen=3 plen=1197 new-ctb
+:pubkey enc packet: [unknown version]
+# off=1200 ctb=d2 tag=18 hlen=6 plen=104919 new-ctb
+:encrypted data packet: [unknown version]
+# off=1210 ctb=9e tag=7 hlen=5 plen=3681752389
+:key packet: [unknown version]

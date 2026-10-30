@@ -1,0 +1,37 @@
+command: gpg --batch --list-packets /work/tmp/interop/repeat-1/pqc/key-sq/sq-pqc.pub.pgp
+exit_code: 2
+
+gpg: packet(6) with unknown version 6
+gpg: packet(2) with unknown version 6
+gpg: packet(2) with unknown version 6
+gpg: packet(2) with unknown version 6
+gpg: packet(14) with unknown version 6
+gpg: packet(2) with unknown version 6
+gpg: packet(14) with unknown version 6
+gpg: packet(2) with unknown version 6
+gpg: packet(14) with unknown version 6
+gpg: packet(2) with unknown version 6
+# off=0 ctb=c6 tag=6 hlen=3 plen=1994 new-ctb
+:key packet: [unknown version]
+# off=1997 ctb=c2 tag=2 hlen=3 plen=3481 new-ctb
+:signature packet: [unknown version]
+# off=5481 ctb=cd tag=13 hlen=2 plen=32 new-ctb
+:user ID packet: "<interop-sq-pqc@example.invalid>"
+# off=5515 ctb=c2 tag=2 hlen=3 plen=3481 new-ctb
+:signature packet: [unknown version]
+# off=8999 ctb=cd tag=13 hlen=2 plen=12 new-ctb
+:user ID packet: "Interop Test"
+# off=9013 ctb=c2 tag=2 hlen=3 plen=3484 new-ctb
+:signature packet: [unknown version]
+# off=12500 ctb=ce tag=14 hlen=3 plen=1994 new-ctb
+:key packet: [unknown version]
+# off=14497 ctb=c2 tag=2 hlen=3 plen=6934 new-ctb
+:signature packet: [unknown version]
+# off=21434 ctb=ce tag=14 hlen=3 plen=1994 new-ctb
+:key packet: [unknown version]
+# off=23431 ctb=c2 tag=2 hlen=3 plen=6934 new-ctb
+:signature packet: [unknown version]
+# off=30368 ctb=ce tag=14 hlen=3 plen=1226 new-ctb
+:key packet: [unknown version]
+# off=31597 ctb=c2 tag=2 hlen=3 plen=3470 new-ctb
+:signature packet: [unknown version]

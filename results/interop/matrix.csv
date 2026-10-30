@@ -1,0 +1,97 @@
+timestamp_utc,repeat,encryptor,decryptor,key_type,stage_reached,result,exit_code,error_message,encryptor_version,decryptor_version
+2026-10-30T16:39:09Z,1,gpg,gpg,classical,done,pass,0,,gpg (GnuPG) 2.5.22,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:09Z,1,gpg,sq,classical,done,pass,0,,gpg (GnuPG) 2.5.22,sq 1.4.0-pqc.1
+2026-10-30T16:39:09Z,1,gpg,gopenpgp,classical,done,pass,0,,gpg (GnuPG) 2.5.22,gopenpgp v3.4.1-proton
+2026-10-30T16:39:09Z,1,sq,gpg,classical,done,pass,0,,sq 1.4.0-pqc.1,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:09Z,1,sq,sq,classical,done,pass,0,,sq 1.4.0-pqc.1,sq 1.4.0-pqc.1
+2026-10-30T16:39:09Z,1,sq,gopenpgp,classical,done,pass,0,,sq 1.4.0-pqc.1,gopenpgp v3.4.1-proton
+2026-10-30T16:39:09Z,1,gopenpgp,gpg,classical,done,pass,0,,gopenpgp v3.4.1-proton,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:09Z,1,gopenpgp,sq,classical,done,pass,0,,gopenpgp v3.4.1-proton,sq 1.4.0-pqc.1
+2026-10-30T16:39:09Z,1,gopenpgp,gopenpgp,classical,done,pass,0,,gopenpgp v3.4.1-proton,gopenpgp v3.4.1-proton
+2026-10-30T16:39:10Z,1,gpg,gpg,pqc,done,pass,0,,gpg (GnuPG) 2.5.22,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:10Z,1,gpg,sq,pqc,import,fail,2,"gpg: keybox '/work/tmp/interop/repeat-1/pqc/gpg-to-sq/homes/gpg/pubring.kbx' created
+gpg: packet(6) with unknown version 6
+gpg: read_block: read error: Invalid packet
+gpg: import from '/work/tmp/interop/repeat-1/pqc/key-sq/sq-pqc.pub.pgp' failed: Invalid keyring
+gpg: Total number processed: 0
+",gpg (GnuPG) 2.5.22,sq 1.4.0-pqc.1
+2026-10-30T16:39:10Z,1,gpg,gopenpgp,pqc,import,fail,2,"gpg: keybox '/work/tmp/interop/repeat-1/pqc/gpg-to-gopenpgp/homes/gpg/pubring.kbx' created
+gpg: packet(6) with unknown version 6
+gpg: read_block: read error: Invalid packet
+gpg: import from '/work/tmp/interop/repeat-1/pqc/key-gopenpgp/gopenpgp-pqc.pub.pgp' failed: Invalid keyring
+gpg: Total number processed: 0
+",gpg (GnuPG) 2.5.22,gopenpgp v3.4.1-proton
+2026-10-30T16:39:10Z,1,sq,gpg,pqc,encrypt,fail,1,"Composing a message...
+
+  Error: Cert 4A766688771758EF7C7DA32078BF7DAAD2F0E19D, Interop Test <interop-gpg-pqc@example.invalid> (UNAUTHENTICATED) has no encryption-capable keys
+",sq 1.4.0-pqc.1,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:10Z,1,sq,sq,pqc,done,pass,0,,sq 1.4.0-pqc.1,sq 1.4.0-pqc.1
+2026-10-30T16:39:10Z,1,sq,gopenpgp,pqc,done,pass,0,,sq 1.4.0-pqc.1,gopenpgp v3.4.1-proton
+2026-10-30T16:39:10Z,1,gopenpgp,gpg,pqc,encrypt,fail,1,"gopenpgp-cli: encrypt: gopenpgp: error in encrypting asymmetrically: openpgp: key selection for primary key 78BF7DAAD2F0E19D: no encryption key: no encryption-capable key found (no key flags or invalid algorithm)
+",gopenpgp v3.4.1-proton,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:10Z,1,gopenpgp,sq,pqc,done,pass,0,,gopenpgp v3.4.1-proton,sq 1.4.0-pqc.1
+2026-10-30T16:39:10Z,1,gopenpgp,gopenpgp,pqc,done,pass,0,,gopenpgp v3.4.1-proton,gopenpgp v3.4.1-proton
+2026-10-30T16:39:10Z,2,gpg,gpg,classical,done,pass,0,,gpg (GnuPG) 2.5.22,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:10Z,2,gpg,sq,classical,done,pass,0,,gpg (GnuPG) 2.5.22,sq 1.4.0-pqc.1
+2026-10-30T16:39:10Z,2,gpg,gopenpgp,classical,done,pass,0,,gpg (GnuPG) 2.5.22,gopenpgp v3.4.1-proton
+2026-10-30T16:39:11Z,2,sq,gpg,classical,done,pass,0,,sq 1.4.0-pqc.1,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:11Z,2,sq,sq,classical,done,pass,0,,sq 1.4.0-pqc.1,sq 1.4.0-pqc.1
+2026-10-30T16:39:11Z,2,sq,gopenpgp,classical,done,pass,0,,sq 1.4.0-pqc.1,gopenpgp v3.4.1-proton
+2026-10-30T16:39:11Z,2,gopenpgp,gpg,classical,done,pass,0,,gopenpgp v3.4.1-proton,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:11Z,2,gopenpgp,sq,classical,done,pass,0,,gopenpgp v3.4.1-proton,sq 1.4.0-pqc.1
+2026-10-30T16:39:11Z,2,gopenpgp,gopenpgp,classical,done,pass,0,,gopenpgp v3.4.1-proton,gopenpgp v3.4.1-proton
+2026-10-30T16:39:11Z,2,gpg,gpg,pqc,done,pass,0,,gpg (GnuPG) 2.5.22,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:11Z,2,gpg,sq,pqc,import,fail,2,"gpg: keybox '/work/tmp/interop/repeat-2/pqc/gpg-to-sq/homes/gpg/pubring.kbx' created
+gpg: packet(6) with unknown version 6
+gpg: read_block: read error: Invalid packet
+gpg: import from '/work/tmp/interop/repeat-2/pqc/key-sq/sq-pqc.pub.pgp' failed: Invalid keyring
+gpg: Total number processed: 0
+",gpg (GnuPG) 2.5.22,sq 1.4.0-pqc.1
+2026-10-30T16:39:11Z,2,gpg,gopenpgp,pqc,import,fail,2,"gpg: keybox '/work/tmp/interop/repeat-2/pqc/gpg-to-gopenpgp/homes/gpg/pubring.kbx' created
+gpg: packet(6) with unknown version 6
+gpg: read_block: read error: Invalid packet
+gpg: import from '/work/tmp/interop/repeat-2/pqc/key-gopenpgp/gopenpgp-pqc.pub.pgp' failed: Invalid keyring
+gpg: Total number processed: 0
+",gpg (GnuPG) 2.5.22,gopenpgp v3.4.1-proton
+2026-10-30T16:39:11Z,2,sq,gpg,pqc,encrypt,fail,1,"Composing a message...
+
+  Error: Cert C201FDDE52F1DBB72419D22843A6E4F434D67494, Interop Test <interop-gpg-pqc@example.invalid> (UNAUTHENTICATED) has no encryption-capable keys
+",sq 1.4.0-pqc.1,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:11Z,2,sq,sq,pqc,done,pass,0,,sq 1.4.0-pqc.1,sq 1.4.0-pqc.1
+2026-10-30T16:39:12Z,2,sq,gopenpgp,pqc,done,pass,0,,sq 1.4.0-pqc.1,gopenpgp v3.4.1-proton
+2026-10-30T16:39:12Z,2,gopenpgp,gpg,pqc,encrypt,fail,1,"gopenpgp-cli: encrypt: gopenpgp: error in encrypting asymmetrically: openpgp: key selection for primary key 43A6E4F434D67494: no encryption key: no encryption-capable key found (no key flags or invalid algorithm)
+",gopenpgp v3.4.1-proton,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:12Z,2,gopenpgp,sq,pqc,done,pass,0,,gopenpgp v3.4.1-proton,sq 1.4.0-pqc.1
+2026-10-30T16:39:12Z,2,gopenpgp,gopenpgp,pqc,done,pass,0,,gopenpgp v3.4.1-proton,gopenpgp v3.4.1-proton
+2026-10-30T16:39:12Z,3,gpg,gpg,classical,done,pass,0,,gpg (GnuPG) 2.5.22,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:12Z,3,gpg,sq,classical,done,pass,0,,gpg (GnuPG) 2.5.22,sq 1.4.0-pqc.1
+2026-10-30T16:39:12Z,3,gpg,gopenpgp,classical,done,pass,0,,gpg (GnuPG) 2.5.22,gopenpgp v3.4.1-proton
+2026-10-30T16:39:12Z,3,sq,gpg,classical,done,pass,0,,sq 1.4.0-pqc.1,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:12Z,3,sq,sq,classical,done,pass,0,,sq 1.4.0-pqc.1,sq 1.4.0-pqc.1
+2026-10-30T16:39:12Z,3,sq,gopenpgp,classical,done,pass,0,,sq 1.4.0-pqc.1,gopenpgp v3.4.1-proton
+2026-10-30T16:39:12Z,3,gopenpgp,gpg,classical,done,pass,0,,gopenpgp v3.4.1-proton,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:13Z,3,gopenpgp,sq,classical,done,pass,0,,gopenpgp v3.4.1-proton,sq 1.4.0-pqc.1
+2026-10-30T16:39:13Z,3,gopenpgp,gopenpgp,classical,done,pass,0,,gopenpgp v3.4.1-proton,gopenpgp v3.4.1-proton
+2026-10-30T16:39:13Z,3,gpg,gpg,pqc,done,pass,0,,gpg (GnuPG) 2.5.22,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:13Z,3,gpg,sq,pqc,import,fail,2,"gpg: keybox '/work/tmp/interop/repeat-3/pqc/gpg-to-sq/homes/gpg/pubring.kbx' created
+gpg: packet(6) with unknown version 6
+gpg: read_block: read error: Invalid packet
+gpg: import from '/work/tmp/interop/repeat-3/pqc/key-sq/sq-pqc.pub.pgp' failed: Invalid keyring
+gpg: Total number processed: 0
+",gpg (GnuPG) 2.5.22,sq 1.4.0-pqc.1
+2026-10-30T16:39:13Z,3,gpg,gopenpgp,pqc,import,fail,2,"gpg: keybox '/work/tmp/interop/repeat-3/pqc/gpg-to-gopenpgp/homes/gpg/pubring.kbx' created
+gpg: packet(6) with unknown version 6
+gpg: read_block: read error: Invalid packet
+gpg: import from '/work/tmp/interop/repeat-3/pqc/key-gopenpgp/gopenpgp-pqc.pub.pgp' failed: Invalid keyring
+gpg: Total number processed: 0
+",gpg (GnuPG) 2.5.22,gopenpgp v3.4.1-proton
+2026-10-30T16:39:13Z,3,sq,gpg,pqc,encrypt,fail,1,"Composing a message...
+
+  Error: Cert 81CFAEEC6C9567544058274E8EDD9BD05BE5315F, Interop Test <interop-gpg-pqc@example.invalid> (UNAUTHENTICATED) has no encryption-capable keys
+",sq 1.4.0-pqc.1,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:13Z,3,sq,sq,pqc,done,pass,0,,sq 1.4.0-pqc.1,sq 1.4.0-pqc.1
+2026-10-30T16:39:13Z,3,sq,gopenpgp,pqc,done,pass,0,,sq 1.4.0-pqc.1,gopenpgp v3.4.1-proton
+2026-10-30T16:39:13Z,3,gopenpgp,gpg,pqc,encrypt,fail,1,"gopenpgp-cli: encrypt: gopenpgp: error in encrypting asymmetrically: openpgp: key selection for primary key 8EDD9BD05BE5315F: no encryption key: no encryption-capable key found (no key flags or invalid algorithm)
+",gopenpgp v3.4.1-proton,gpg (GnuPG) 2.5.22
+2026-10-30T16:39:13Z,3,gopenpgp,sq,pqc,done,pass,0,,gopenpgp v3.4.1-proton,sq 1.4.0-pqc.1
+2026-10-30T16:39:14Z,3,gopenpgp,gopenpgp,pqc,done,pass,0,,gopenpgp v3.4.1-proton,gopenpgp v3.4.1-proton
