@@ -51,6 +51,29 @@ Each post-quantum mode is compared with the classical mode **of the same tool**,
 
 We do not use GnuPG's `pqc` shortcut for `gpg-pqc`. In GnuPG 2.5.22 it creates a brainpoolP384r1 primary key with an ML-KEM-768 + brainpool P-256 subkey. That would change the classical curve as well as adding ML-KEM, and it would differ from the X25519 hybrid used by age and RFC 9980. With the commands above, the two gpg modes differ only in the encryption subkey.
 
+### How the benchmark measures (`bench/`)
+
+**Conditions.** Each mode is measured at every file size, with 1, 10, and 50 recipients. Encryption is one condition. Decryption with one recipient is one condition. With 10 or 50 recipients, decryption is measured twice: with the key of the **first** recipient (r01) and with the key of the **last** one (r10 or r50). age tries the recipient stanzas in order, so the position matters. That gives 8 measured conditions per mode and size, 128 in total, plus 48 ciphertext-size conditions. [`bench/conditions.py`](bench/conditions.py) defines them and builds the exact tool calls, so the timing runs and the resource runs execute the same commands:
+
+```text
+age  encrypt:  age -R <recipients file> -o <out> <in>
+age  decrypt:  age -d -i <identity> -o <out> <in>
+gpg  encrypt:  gpg --batch --yes --pinentry-mode loopback --trust-model always --compress-algo none -r <fpr> ... -o <out> -e <in>
+gpg  decrypt:  gpg --batch --yes --pinentry-mode loopback --trust-model always -o <out> -d <in>
+```
+
+**Keys** ([`bench/gen_keys.py`](bench/gen_keys.py)): 50 test recipients `r01` … `r50` per mode, in `keys/`. Every gpg recipient has its own `GNUPGHOME` with only its own key. The sender's keyring holds the 50 public certificates and no secret keys. `keys/MANIFEST.csv` lists every key.
+
+**Sizes, RQ1** ([`bench/sizes.py`](bench/sizes.py)): public key sizes go to `key_sizes.csv`. Ciphertext sizes go to `sizes.csv`, measured once per condition, because they are deterministic. Overhead is ciphertext size minus input size. Each ciphertext is decrypted as r01 and checked against the input's SHA-256. `results/bench/inspect/` holds `age-inspect` or `gpg --list-packets` of the 1 KB ciphertexts, which show where the bytes go.
+
+**Timing, RQ2** ([`bench/run_timing.py`](bench/run_timing.py)): `hyperfine --shell=none` with 2 warm-up runs, then 10 measured runs (3 for 1 GB). The output file is removed before every run. Conditions run in a shuffled order, and the seed is saved in `results/bench/seed_timing.txt`, so drift over time does not line up with one mode. For gpg, `gpg-agent` is started before the timing and stopped after it. The last run's output is checked against the input's SHA-256. Each measured run becomes one row in `timing.csv`, and the full hyperfine JSON is kept in `results/bench/raw/`.
+
+**Phases.** `--phase pilot` runs 1 KB and 100 KB with 2 runs per condition, for checking the setup. `--phase full` runs everything. [`bench/run_all.py`](bench/run_all.py) runs keys, sizes, and timing in order and logs to `results/bench/run.log`.
+
+**Resumable.** Every script skips conditions that already have results. `--force` measures again and replaces the old rows. `run_timing.py` and `run_resources.py` also take `--only <condition_id>` to run only some conditions. A failed tool call or hash check is written to the CSV, and then the run stops so it can be investigated.
+
+CPU and memory (RQ3) are measured by [`bench/run_resources.py`](bench/run_resources.py) with the same commands, one fresh container per run. See [Reproducing the results](#reproducing-the-results).
+
 ---
 
 ## Requirements
