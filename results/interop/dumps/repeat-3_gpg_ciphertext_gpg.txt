@@ -1,0 +1,15 @@
+command: gpg --batch --list-packets /work/tmp/interop/repeat-3/pqc/gpg-to-gpg/ciphertext.pgp
+exit_code: 2
+
+gpg: encrypted with Kyber key, ID 8C7F9E5DF6A436B9
+gpg: public key decryption failed: No secret key
+gpg: decryption failed: No secret key
+# off=0 ctb=85 tag=1 hlen=3 plen=1178
+:pubkey enc packet: version 3, algo 8, keyid 8C7F9E5DF6A436B9
+	session key algo: 9
+	data: [255 bits]
+	data: [8704 bits]
+	data: [320 bits]
+# off=1181 ctb=d4 tag=20 hlen=2 plen=0 partial new-ctb
+:aead encrypted packet: cipher=9 aead=2 cb=16
+	length: unknown

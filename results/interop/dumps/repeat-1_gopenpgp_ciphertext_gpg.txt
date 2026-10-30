@@ -1,0 +1,13 @@
+command: gpg --batch --list-packets /work/tmp/interop/repeat-1/pqc/gopenpgp-to-sq/ciphertext.pgp
+exit_code: 2
+
+gpg: encrypted with ? key, ID F2E22210741651D0
+gpg: public key decryption failed: No secret key
+gpg: decryption failed: No secret key
+# off=0 ctb=c1 tag=1 hlen=3 plen=1172 new-ctb
+:pubkey enc packet: version 3, algo 35, keyid F2E22210741651D0
+	unsupported algorithm 35
+# off=1175 ctb=d2 tag=18 hlen=2 plen=0 partial new-ctb
+:encrypted data packet:
+	length: unknown
+	mdc_method: 2

@@ -5,7 +5,7 @@ A reproducible benchmark and interoperability test suite comparing **classical**
 Seminar project for the Information Security course (Siguria e Informacionit), FIEK Master, 2026/27.
 Team: Ora Osmani, Erëza Ismajli, Nehar Jashari.
 
-> **Status (Oct 22, 2026):** the Docker image builds with all four tools (age, GnuPG, Sequoia `sq`, GopenPGP), and the smoke test passes a classical and a post-quantum round trip for each. The benchmark, interop, and analysis scripts are in progress. Sections marked *(planned)* describe targets that are not implemented yet.
+> **Status (Oct 30, 2026):** all measurements are done and committed: key and ciphertext sizes (RQ1), timing (RQ2), CPU and memory (RQ3), and the interop matrix (RQ4). Every figure and table in `figures/` and `tables/` is generated from the raw data in `results/`. See [Results](#results) for where each file is.
 
 ---
 
@@ -25,6 +25,8 @@ Encrypted files can be copied today and decrypted later, once a quantum computer
 The RQ4 runner checks every directed pair of GnuPG, Sequoia `sq`, and GopenPGP, including each tool against itself, with classical and PQC keys. Each repeat creates fresh keys and a fresh 100 KiB random input. The runner stops at the first failed stage, records complete stderr and tool versions, and checks decrypted output with SHA-256. Classical results are the positive control.
 
 Run the three full repetitions in the pinned Docker image with `make interop`. This writes `results/interop/matrix.csv`, packet dumps under `results/interop/dumps/`, `results/interop/packets.csv`, and the two generated tables `tables/interop_matrix.tex` and `tables/interop_packets.tex`. Packet tables should be interpreted together with the raw dumps: a blank packet field means the installed dumper did not expose a matching field in its output, not that the packet property is absent.
+
+When `gpg --list-packets` reads a v6 message it cannot parse, only its first two packets are meaningful. After them, gpg reads the encrypted bytes as packets, so the rest of that dump is noise and its length varies between repeats.
 
 ### Experiment design
 
@@ -87,9 +89,9 @@ docker build -t pqc-bench -f docker/Dockerfile .
 docker run --rm -v "$PWD:/work" -w /work pqc-bench sh docker/smoke_test.sh
 ```
 
-## Reproducing the results *(planned)*
+## Reproducing the results
 
-The full pipeline will be:
+The full pipeline, in order:
 
 ```bash
 make inputs
@@ -122,16 +124,16 @@ python3 measure/validate_measured.py
 It measures the baseline (`true`), confirms that gpg-agent is in the measured cgroup, and compares the two memory numbers.
 
 ```bash
-docker run --rm -v "$PWD:/work" -w /work pqc-bench python3 interop/run_matrix.py --repeats 3
+make interop
 ```
 
-Interop matrix (RQ4).
+Interop matrix (RQ4). Runs `interop/run_matrix.py --repeat 3`, then `interop/diagnose.py` (packet dumps of every PQC cert and ciphertext), then `interop/make_table.py`, all inside the image. It takes under a minute. Each run replaces `results/interop/matrix.csv` as a whole.
 
 ```bash
 make figures
 ```
 
-Regenerates every figure and table from `results/`. It runs on the host and needs the pinned analysis packages first:
+Regenerates every figure and table from `results/`. It runs on the host and needs the pinned analysis packages first. On Debian and Ubuntu, `venv` needs the `python3-venv` package (for example `python3.12-venv`):
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
@@ -140,6 +142,42 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 Then run `make figures PYTHON=.venv/bin/python`. It starts with `analysis/sanity.py`, which stops everything if a condition or run is missing, an exit code is not 0, or a SHA-256 check failed, and which lists noisy conditions (IQR above 20% of the median). Then `analysis/figures.py` writes `figures/*.pdf`, and `analysis/tables.py` writes `tables/*.tex`: medians with IQR, PQ/classical ratios with 95% bootstrap confidence intervals, and a cost decomposition `a + b·recipients + c·bytes` per mode.
 
 Full runs take hours and are done once, on the measurement machine, with nothing else running. All scripts are resumable and skip conditions whose output already exists.
+
+The containers run as root, so the files they write into the mounted repo (`results/`, `figures/`, `tables/`, `keys/`, `tmp/`) belong to root on the host. Before `git add` or `git pull`, give them back to your user without `sudo`:
+
+```bash
+docker run --rm -v "$PWD:/work" -w /work pqc-bench chown -R "$(id -u):$(id -g)" results figures tables keys tmp
+```
+
+---
+
+## Results
+
+All raw data is in `results/`. Everything in `figures/` and `tables/` is generated from it by `make figures` and is never edited by hand.
+
+| | Raw data | Figures and tables |
+|---|---|---|
+| **RQ1** sizes | `results/bench/key_sizes.csv` (200 keys), `results/bench/sizes.csv` (48 ciphertexts), `results/bench/inspect/` (`age-inspect` and `gpg --list-packets` output) | `tables/key_sizes.tex`, `figures/overhead_vs_recipients.pdf` |
+| **RQ2** timing | `results/bench/timing.csv` (1,184 rows, pilot and full), `results/bench/raw/*.json` (hyperfine, every run) | `figures/time_vs_size.pdf`, `figures/time_ratio.pdf`, `figures/decrypt_position.pdf`, `tables/ratio_time.tex`, `tables/decompose_time.tex` |
+| **RQ3** CPU and memory | `results/bench/resources.csv` (1,184 rows, pilot and full), `results/bench/resources_baseline.csv` (container baseline) | `figures/resources_vs_recipients.pdf`, `tables/ratio_cpu.tex`, `tables/decompose_cpu.tex` |
+| **RQ4** interop | `results/interop/matrix.csv` (54 rows: 3 repeats × 9 pairs × 2 key types, with full stderr), `results/interop/packets.csv`, `results/interop/dumps/` | `tables/interop_matrix.tex`, `tables/interop_packets.tex` |
+
+Run order and seeds: `results/bench/seed_timing.txt`, `results/bench/seed_resources.txt`, `results/bench/run.log`. Input hashes: `results/inputs.sha256`.
+
+### Measurement environment
+
+All measurements ran on one machine: AMD Ryzen 7 PRO 7840HS (16 logical CPUs), Ubuntu 24.04 on WSL2 (kernel 6.18.54.1, cgroup v2) under Windows 11, Docker Engine 29.8.2, on AC power. `results/env.json` and `tables/environment.tex` describe the timing run (captured 2026-10-26T23:08:13Z). The resource run's `env.json` is in git history at commit `64d0e1d` (captured 2026-10-26T21:43:38Z). Both runs used the same image build. The interop run (2026-10-30) used a rebuild of the image that differs only in the GopenPGP CLI wrapper.
+
+### Interop at a glance
+
+Identical in all 3 repeats:
+
+| Encryptor → decryptor | Classical | PQC |
+|---|---|---|
+| each tool → itself | pass | pass |
+| `sq` ↔ GopenPGP | pass | pass |
+| gpg → `sq`, gpg → GopenPGP | pass | fails at import: GnuPG 2.5.22 does not read v6 certs (`packet(6) with unknown version 6`) |
+| `sq` → gpg, GopenPGP → gpg | pass | fails at encrypt: neither finds a usable encryption subkey in GnuPG's `ky768_cv25519` cert |
 
 ---
 

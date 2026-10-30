@@ -1,0 +1,20 @@
+command: sq packet dump /work/tmp/interop/repeat-3/pqc/sq-to-sq/ciphertext.pgp
+exit_code: 0
+
+No key to decrypt message.  The message appears to be encrypted to:
+
+ - 7372FD7F936765E4ED2D6490A3BA1603B8BB9EC07C7A909EED84E7B986B692D7, certificate not found
+
+Public-Key Encrypted Session Key Packet, new CTB, 1197 bytes
+    Version: 6
+    Recipient: 7372FD7F936765E4ED2D6490A3BA1603B8BB9EC07C7A909EED84E7B986B692D7
+    Pk algo: ML-KEM-768+X25519
+  
+Sym. Encrypted and Integrity Protected Data Packet, new CTB, 104919 bytes
+    Version: 2
+    Symmetric algo: AES-256
+    AEAD algo: OCB
+    Chunk size: 4096
+    Salt: EA21C88096968CE2473B049254689F59CC2C9DD7EF04F43EEF862DCDEEECA9C2
+    Decryption failed: No key to decrypt message
+  

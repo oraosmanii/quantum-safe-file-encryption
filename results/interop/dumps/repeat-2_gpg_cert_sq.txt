@@ -1,0 +1,55 @@
+command: sq packet dump /work/tmp/interop/repeat-2/pqc/key-gpg/gpg-pqc.pub.pgp
+exit_code: 0
+
+Public-Key Packet, old CTB, 51 bytes
+    Version: 4
+    Creation time: 2026-10-30 16:39:11 UTC
+    Pk algo: EdDSA
+    Pk size: 256 bits
+    Fingerprint: C201FDDE52F1DBB72419D22843A6E4F434D67494
+    KeyID: 43A6E4F434D67494
+  
+User ID Packet, old CTB, 46 bytes
+    Value: Interop Test <interop-gpg-pqc@example.invalid>
+  
+Signature Packet, old CTB, 175 bytes
+    Version: 4
+    Type: PositiveCertification
+    Pk algo: EdDSA
+    Hash algo: SHA512
+    Hashed area:
+      Issuer Fingerprint: C201FDDE52F1DBB72419D22843A6E4F434D67494
+      Signature creation time: 2026-10-30 16:39:11 UTC
+      Notation: manu: 2,2.5+1.12,2,2
+      Key flags: CS
+      Symmetric algo preferences: AES256, AES192, AES128, TripleDES
+      PreferredAEADAlgorithms:
+        00000000  02
+      Hash preferences: SHA512, SHA384, SHA256, SHA224, SHA1
+      Compression preferences: Zlib, BZip2, Zip
+      Features: SEIPDv1, #1, #2
+      Keyserver preferences: no modify
+    Unhashed area:
+      Issuer: 43A6E4F434D67494
+    Digest prefix: A698
+    Level: 0 (signature over data)
+  
+Unknown or Unsupported Packet, old CTB, 1237 bytes
+    Tag: Public-Subkey Packet
+    Error: Malformed packet: unknown version
+  
+Signature Packet, old CTB, 148 bytes
+    Version: 4
+    Type: SubkeyBinding
+    Pk algo: EdDSA
+    Hash algo: SHA512
+    Hashed area:
+      Issuer Fingerprint: C201FDDE52F1DBB72419D22843A6E4F434D67494
+      Signature creation time: 2026-10-30 16:39:11 UTC
+      Notation: manu: 2,2.5+1.12,2,2
+      Key flags: EtEr
+    Unhashed area:
+      Issuer: 43A6E4F434D67494
+    Digest prefix: D547
+    Level: 0 (signature over data)
+  

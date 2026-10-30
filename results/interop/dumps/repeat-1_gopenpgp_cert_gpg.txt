@@ -1,0 +1,20 @@
+command: gpg --batch --list-packets /work/tmp/interop/repeat-1/pqc/key-gopenpgp/gopenpgp-pqc.pub.pgp
+exit_code: 2
+
+gpg: packet(6) with unknown version 6
+gpg: packet(2) with unknown version 6
+gpg: packet(2) with unknown version 6
+gpg: packet(14) with unknown version 6
+gpg: packet(2) with unknown version 6
+# off=0 ctb=c6 tag=6 hlen=3 plen=1994 new-ctb
+:key packet: [unknown version]
+# off=1997 ctb=c2 tag=2 hlen=3 plen=3489 new-ctb
+:signature packet: [unknown version]
+# off=5489 ctb=cd tag=13 hlen=2 plen=51 new-ctb
+:user ID packet: "Interop Test <interop-gopenpgp-pqc@example.invalid>"
+# off=5542 ctb=c2 tag=2 hlen=3 plen=3464 new-ctb
+:signature packet: [unknown version]
+# off=9009 ctb=ce tag=14 hlen=3 plen=1226 new-ctb
+:key packet: [unknown version]
+# off=10238 ctb=c2 tag=2 hlen=3 plen=3464 new-ctb
+:signature packet: [unknown version]

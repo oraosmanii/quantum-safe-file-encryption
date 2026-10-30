@@ -1,0 +1,64 @@
+command: sq packet dump /work/tmp/interop/repeat-2/pqc/key-gopenpgp/gopenpgp-pqc.pub.pgp
+exit_code: 0
+
+Public-Key Packet, new CTB, 1994 bytes
+    Version: 6
+    Creation time: 2026-10-30 16:39:11 UTC
+    Pk algo: ML-DSA-65+Ed25519
+    Fingerprint: FA173699FEAD5EEFC876B544E100D7C6A97855BAA285B25E8C3BDA69DEB3C7CE
+    KeyID: FA173699FEAD5EEF
+  
+Signature Packet, new CTB, 3489 bytes
+    Version: 6
+    Type: DirectKey
+    Pk algo: ML-DSA-65+Ed25519
+    Hash algo: SHA512
+    Hashed area:
+      Signature creation time: 2026-10-30 16:39:11 UTC (critical)
+      Symmetric algo preferences: AES256, AES128
+      Hash preferences: SHA512, SHA256
+      Compression preferences: Uncompressed, Zlib
+      Key flags: CS (critical)
+      Features: SEIPDv1, SEIPDv2
+      Issuer Fingerprint: FA173699FEAD5EEFC876B544E100D7C6A97855BAA285B25E8C3BDA69DEB3C7CE (critical)
+      AEAD preferences: AES256+GCM, AES256+OCB, AES128+GCM, AES128+OCB
+    Digest prefix: CA74
+    Salt: 3918D6DE0350339924EA97BACB68B83AC406B43E6A058955585F2A98FE1F8828
+    Level: 0 (signature over data)
+  
+User ID Packet, new CTB, 51 bytes
+    Value: Interop Test <interop-gopenpgp-pqc@example.invalid>
+  
+Signature Packet, new CTB, 3464 bytes
+    Version: 6
+    Type: PositiveCertification
+    Pk algo: ML-DSA-65+Ed25519
+    Hash algo: SHA512
+    Hashed area:
+      Signature creation time: 2026-10-30 16:39:11 UTC (critical)
+      Primary User ID: true
+      Issuer Fingerprint: FA173699FEAD5EEFC876B544E100D7C6A97855BAA285B25E8C3BDA69DEB3C7CE (critical)
+    Digest prefix: 763B
+    Salt: 2C3514B747011B86CBE0B05BB674002BBD951AD50FFC617AC8AC50CEDC167AEB
+    Level: 0 (signature over data)
+  
+Public-Subkey Packet, new CTB, 1226 bytes
+    Version: 6
+    Creation time: 2026-10-30 16:39:11 UTC
+    Pk algo: ML-KEM-768+X25519
+    Fingerprint: 346FC0909F93190CCB8E6BD706528850DC5ECA4D526DA56E76FD3E1477374B23
+    KeyID: 346FC0909F93190C
+  
+Signature Packet, new CTB, 3464 bytes
+    Version: 6
+    Type: SubkeyBinding
+    Pk algo: ML-DSA-65+Ed25519
+    Hash algo: SHA512
+    Hashed area:
+      Signature creation time: 2026-10-30 16:39:11 UTC (critical)
+      Key flags: EtEr (critical)
+      Issuer Fingerprint: FA173699FEAD5EEFC876B544E100D7C6A97855BAA285B25E8C3BDA69DEB3C7CE (critical)
+    Digest prefix: D50F
+    Salt: C30B27C2C13A084234517EC732E31B29E7CCF7DBD9DDE91CD9985119BEB92CC6
+    Level: 0 (signature over data)
+  

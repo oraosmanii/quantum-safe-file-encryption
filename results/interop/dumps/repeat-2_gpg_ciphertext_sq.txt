@@ -1,0 +1,12 @@
+command: sq packet dump /work/tmp/interop/repeat-2/pqc/gpg-to-gpg/ciphertext.pgp
+exit_code: 0
+
+Public-Key Encrypted Session Key Packet, old CTB, 1178 bytes
+    Version: 3
+    Recipient: 98869F9B4EEC72F2
+    Pk algo: Unknown algo 8
+  
+Unknown or Unsupported Packet, new CTB, partial length, 1024 bytes in first chunk
+    Tag: AEAD Encrypted Data Packet
+    Error: Unsupported packet type.  Tag: AEAD Encrypted Data Packet
+  
