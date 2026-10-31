@@ -1,5 +1,4 @@
 # Entry points for building, running, and analysing the benchmark.
-# Targets marked TODO are stubs and fail until they are implemented.
 
 IMAGE := pqc-bench
 # The analysis runs on the host with the pinned packages from requirements.txt
@@ -25,8 +24,11 @@ inputs:
 env:
 	python3 measure/capture_env.py --force
 
+# Full runs: keys, sizes, timing (RQ1, RQ2) in the image, then CPU and memory
+# (RQ3) on the host, which starts one container per run. Takes hours; resumable.
 bench:
-	@echo "TODO: bench/run_all.py (Person A). Full runs are started by a human." && false
+	$(DOCKER_RUN) python3 bench/run_all.py --phase full
+	python3 bench/run_resources.py --phase full
 
 interop:
 	$(DOCKER_RUN) python3 interop/run_matrix.py --repeat 3
