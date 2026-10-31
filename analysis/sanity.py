@@ -3,8 +3,8 @@
 Runs on the host:
     python3 analysis/sanity.py [--phase full|pilot] [--results DIR]
 
-Checks, per results file (INTERFACES.md sections 3 and 7):
-- the file exists and its header matches the interface contract;
+Checks, per results file:
+- the file exists and its header matches data.HEADERS;
 - every expected condition (all 128 measured conditions for timing and resources, all
   48 conditions for sizes, 50 keys per mode) is present with exactly runs 1..N;
 - every exit code is 0 and every sha256_ok is true;
@@ -91,7 +91,7 @@ def check_key_sizes(report, results):
             report.fail(name, f"{mode}: {n} keys, expected {data.conditions.N_KEYS}")
     if set(df["mode"]) - set(data.MODES):
         report.fail(name, f"unknown modes: {sorted(set(df['mode']) - set(data.MODES))}")
-    # Sizes should not vary within a mode; gpg certs may differ by 1 byte (NOTES.md, Oct 23).
+    # Sizes should not vary within a mode; gpg certs may differ by 1 byte.
     for mode, g in df.groupby("mode"):
         spread = g["public_key_bytes"].max() - g["public_key_bytes"].min()
         if spread > 1:
@@ -156,7 +156,7 @@ def check_matrix(report, results, phase):
     if df is None:
         return
     repeats = 3 if phase == "full" else 1
-    expected = 3 * 3 * 2 * repeats  # encryptor x decryptor x key_type x repeat (section 7.7)
+    expected = 3 * 3 * 2 * repeats  # encryptor x decryptor x key_type x repeat
     cells = df[["repeat", "encryptor", "decryptor", "key_type"]].drop_duplicates()
     if len(cells) < expected:
         report.fail(name, f"{len(cells)} cells, expected {expected}")

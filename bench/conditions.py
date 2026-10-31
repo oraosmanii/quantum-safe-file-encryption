@@ -1,6 +1,6 @@
-"""The measured conditions and the exact tool calls behind them (INTERFACES.md section 6.1).
+"""The measured conditions and the exact tool calls behind them.
 
-The timing runs (run_timing.py, A) and the resource runs (run_resources.py, C) both
+The timing runs (run_timing.py) and the resource runs (run_resources.py) both
 build their commands here, so they execute exactly the same tool calls. Standard
 library only: this module is imported inside the pqc-bench image and on the host.
 build_command() only reads files; prepare() and verify() call age and gpg, so they
@@ -41,8 +41,8 @@ GPG = ["gpg", "--batch", "--yes", "--pinentry-mode", "loopback", "--trust-model"
 
 @dataclass(frozen=True)
 class Condition:
-    mode: str                  # section 3.1
-    size_id: str               # section 3.2
+    mode: str                  # one of MODES
+    size_id: str               # a key of SIZES
     n_recipients: int          # 1, 10, 50
     op: str                    # "encrypt" | "decrypt"
     recipient_position: str    # "na" | "only" | "first" | "last"
@@ -73,7 +73,7 @@ class Condition:
 
     @property
     def timeout_s(self) -> float:
-        """Per tool call (INTERFACES.md section 6.4)."""
+        """Per tool call."""
         return 900.0 if self.size_id == "1GB" else 60.0
 
     @property
@@ -101,7 +101,7 @@ def from_id(condition_id):
 
 
 def run_count(cond, phase):
-    """Measured runs per condition in a phase (INTERFACES.md section 3.5)."""
+    """Measured runs per condition in a phase."""
     return PILOT_RUNS if phase == "pilot" else cond.runs
 
 
@@ -117,7 +117,7 @@ def conditions(phase):
     return out
 
 
-# --- key layout (INTERFACES.md section 5) ---
+# --- key layout ---
 
 def rid(i):
     return f"r{i:02d}"
@@ -181,7 +181,7 @@ def decrypt_argv(mode, recipient_id, in_path, out_path):
     return [*GPG, "-o", out_path, "-d", in_path], {"GNUPGHOME": gnupghome(mode, recipient_id)}
 
 
-# --- commands (INTERFACES.md section 6.1) ---
+# --- commands ---
 
 @dataclass(frozen=True)
 class Command:

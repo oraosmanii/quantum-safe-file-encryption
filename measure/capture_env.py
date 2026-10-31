@@ -1,6 +1,6 @@
 """Write results/env.json: the machine, Docker, container, and tool versions of a run.
 
-Runs on the host, from any directory, before every full run (INTERFACES.md section 8).
+Runs on the host, from any directory, before every full run.
 bench/run_all.py and bench/run_resources.py refuse to start a full run without the file.
 
 Every value is read from the system at capture time. A value that cannot be read is
@@ -24,7 +24,7 @@ DEFAULT_OUT = ROOT / "results" / "env.json"
 IMAGE = "pqc-bench"
 TIMEOUT = 60.0
 
-# tools key -> command run in a fresh pqc-bench container (INTERFACES.md section 8).
+# tools key -> command run in a fresh pqc-bench container.
 # libgcrypt and sequoia_openpgp are extracted from the gpgconf and sq outputs below.
 TOOL_COMMANDS = {
     "age": ["age", "--version"],

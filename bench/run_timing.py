@@ -6,7 +6,7 @@ Runs inside the pqc-bench image, after bench/gen_keys.py:
 For each measured condition of the phase, in an order shuffled with the seed saved in
 results/bench/seed_timing.txt: prepare() it, run hyperfine (2 warm-ups, then the
 phase's runs), check the last output's SHA-256, append one row per measured run to
-results/bench/timing.csv (INTERFACES.md section 7.4), and keep the hyperfine JSON.
+results/bench/timing.csv, and keep the hyperfine JSON.
 
 Resumable: a condition that already has rows for this phase is skipped. --force runs
 the selected conditions again and replaces their rows. A failed tool call or hash check

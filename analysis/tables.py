@@ -9,7 +9,7 @@ Reads only the results directory, writes tables/<name>.tex (booktabs, \\input in
   95% bootstrap CI, per matched condition (RQ2, RQ3)
 - decompose_time, decompose_cpu: a + b * recipients + c * bytes per mode (RQ2, RQ3)
 - environment: machine, Docker, and tool versions from env.json
-The interop tables (interop_*.tex) are made by Person B's interop/make_table.py.
+The interop tables (interop_*.tex) are made by interop/make_table.py.
 """
 
 import argparse

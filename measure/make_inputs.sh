@@ -1,5 +1,5 @@
 #!/bin/sh
-# Generate the random input files data/in_<size_id>.bin (INTERFACES.md section 3.2)
+# Generate the random input files data/in_<size_id>.bin
 # and record their SHA-256 in results/inputs.sha256. Runs inside the pqc-bench image.
 #
 # usage: sh measure/make_inputs.sh [--force]
@@ -19,7 +19,7 @@ case "${1:-}" in
     *) echo "usage: sh measure/make_inputs.sh [--force]" >&2; exit 2 ;;
 esac
 
-# size_id and file_bytes, in the order of INTERFACES.md section 3.2.
+# size_id and file_bytes, smallest first.
 SIZES="1KB:1024 100KB:102400 10MB:10485760 1GB:1073741824"
 HASHES=results/inputs.sha256
 
@@ -35,7 +35,7 @@ if [ "$force" -eq 0 ] && [ -f "$HASHES" ]; then
     if [ "$missing" -eq 1 ]; then
         echo "error: $HASHES exists but some inputs in data/ are missing." >&2
         echo "New random inputs would not match the committed hashes. Copy the original" >&2
-        echo "data/ files here, or run with --force to regenerate all inputs (log it in NOTES.md)." >&2
+        echo "data/ files here, or run with --force to regenerate all inputs." >&2
         exit 1
     fi
     if sha256sum --check --quiet --strict "$HASHES"; then

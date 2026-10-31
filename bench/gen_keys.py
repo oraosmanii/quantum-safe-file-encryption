@@ -3,7 +3,7 @@
 Runs inside the pqc-bench image:
     docker run --rm -v "$PWD:/work" -w /work pqc-bench python3 bench/gen_keys.py [--force]
 
-Layout (INTERFACES.md section 5), 50 recipients r01 ... r50 per mode:
+Layout, 50 recipients r01 ... r50 per mode:
 - age: rNN/id.txt (secret), rNN/recipient.txt (public, one line), and
   recipients_n1/n10/n50.txt with r01 ... rN in that order.
 - gpg: rNN/gnupghome (only this recipient's key), rNN/cert.pgp (binary public cert),
@@ -28,7 +28,7 @@ GPG_KEYGEN = ["gpg", "--batch", "--pinentry-mode", "loopback", "--passphrase", "
 
 # gpg-cv25519 uses GnuPG's future-default (Ed25519 + cv25519). gpg-pqc uses an Ed25519
 # primary key plus a ky768_cv25519 subkey, not the "pqc" shortcut, which in 2.5.22
-# pairs ML-KEM-768 with brainpool (NOTES.md, 2026-10-22). Value: (primary algo,
+# pairs ML-KEM-768 with brainpool. Value: (primary algo,
 # subkey algo or None, expected subkey curve).
 GPG_KEYS = {
     "gpg-cv25519": ("future-default", None, "cv25519"),

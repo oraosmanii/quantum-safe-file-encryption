@@ -1,6 +1,6 @@
 # Pinned versions
 
-Every tool in the `pqc-bench` image, with its source and checksum. The values here must match the `ARG`s in `docker/Dockerfile`. Changing any of them changes the experiment, so it needs team approval and an entry in the deviations log.
+Every tool in the `pqc-bench` image, with its source and checksum. The values here must match the `ARG`s in `docker/Dockerfile`. Changing any of them changes the experiment and invalidates comparison with the committed results.
 
 Resolved and verified on 2026-10-22 (UTC).
 

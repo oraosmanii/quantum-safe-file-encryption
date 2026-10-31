@@ -1,4 +1,4 @@
-"""Load the raw results for the analysis: CSV headers checked against INTERFACES.md section 7.
+"""Load the raw results for the analysis: CSV headers checked against HEADERS.
 
 Shared by sanity.py, stats.py, figures.py, and tables.py. Runs on the host with the
 pinned packages from requirements.txt. Every function takes the results directory, so
@@ -26,7 +26,7 @@ RECIPIENT_COUNTS = conditions.RECIPIENT_COUNTS
 PAIRS = {"age": ("age-pq", "age-x25519"), "gpg": ("gpg-pqc", "gpg-cv25519")}
 PQ_MODES = {pq for pq, _ in PAIRS.values()}
 
-# INTERFACES.md section 7, exact header rows.
+# Exact header rows of every results CSV.
 HEADERS = {
     "bench/key_sizes.csv": ["mode", "recipient_id", "public_key_bytes", "enc_subkey_packet_bytes",
                             "tool_version", "timestamp_utc"],
@@ -48,7 +48,7 @@ HEADERS = {
 
 
 class DataError(Exception):
-    """A results file is missing or does not match the interface contract."""
+    """A results file is missing or does not match its expected header."""
 
 
 def read(results, name):
@@ -114,7 +114,7 @@ def env(results=RESULTS):
 
 
 def expected_conditions(phase):
-    """Every measured condition of the phase with its number of runs (INTERFACES.md 3.4, 3.5)."""
+    """Every measured condition of the phase with its number of runs."""
     return [(c, conditions.run_count(c, phase)) for c in conditions.conditions(phase)]
 
 

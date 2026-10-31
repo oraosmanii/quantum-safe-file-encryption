@@ -1,5 +1,5 @@
 #!/bin/sh
-# Measure CPU time and peak memory of one command (RQ3, INTERFACES.md section 6.2).
+# Measure CPU time and peak memory of one command (RQ3).
 # Runs inside a fresh pqc-bench container, one container per measured run, because
 # the cgroup's memory.peak is a maximum over the whole lifetime of the container.
 # Started by measure/runner.py on the host; timing is measured separately (hyperfine).
@@ -40,7 +40,7 @@ fail() {
 [ -r "$CG/memory.peak" ] || fail "$CG/memory.peak is not readable (kernel >= 5.19 needed)"
 
 if [ -n "${GNUPGHOME:-}" ]; then
-    # Without this directory the agent sockets land in GNUPGHOME under keys/ (NOTES.md).
+    # Without this directory the agent sockets land in GNUPGHOME under keys/.
     [ -d "/run/user/$(id -u)" ] || fail "/run/user/$(id -u) is missing; rebuild the image (make image)"
     if [ -z "${RUN_MEASURED_NO_AGENT:-}" ]; then
         gpgconf --launch gpg-agent || fail "cannot start gpg-agent for GNUPGHOME=$GNUPGHOME"

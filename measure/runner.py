@@ -1,6 +1,6 @@
 """Measure CPU time and peak memory of one tool call in a fresh container (RQ3).
 
-Host side of measure/run_measured.sh (INTERFACES.md section 6.2). Every call starts one
+Host side of measure/run_measured.sh. Every call starts one
 fresh pqc-bench container, because the cgroup's memory.peak never decreases within a
 container. Used by bench/run_resources.py; also runnable by hand:
 

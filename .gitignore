@@ -12,12 +12,12 @@ data/
 out.bin
 tmp/
 
-# Planning files linked in from grupi-master-docs (never commit)
+# Local planning files (never commit)
 claude.md
 CLAUDE.md
 PLAN.md
 INTERFACES.md
-TASKS_*.md
+TASKS*.md
 NOTES.md
 PROPOSAL.md
 Projekt_propozimi___Grupi4.pdf

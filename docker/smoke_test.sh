@@ -63,8 +63,8 @@ gpg_mode() {
     check "$1"
 }
 # Both modes use an Ed25519 primary key, so they differ only in the encryption subkey.
-# gpg-pqc uses ky768_cv25519 (ML-KEM-768 + X25519) as the proposal defines it, not the
-# "pqc" shortcut, which in 2.5.22 creates brainpoolP384r1 + ky768_bp256 (see NOTES.md).
+# gpg-pqc uses ky768_cv25519 (ML-KEM-768 + X25519), the hybrid under study, not the
+# "pqc" shortcut, which in 2.5.22 creates brainpoolP384r1 + ky768_bp256.
 gpg_mode gpg-cv25519 gpg-x future-default
 gpg_mode gpg-pqc gpg-pq ed25519 ky768_cv25519
 

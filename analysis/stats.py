@@ -1,13 +1,13 @@
 """Statistics for RQ2 and RQ3: median and IQR, PQ/classical ratios, cost decomposition.
 
 Used by figures.py and tables.py; nothing here reads or writes files. Inputs are the
-per-run DataFrames from data.py (one row per run, INTERFACES.md section 4).
+per-run DataFrames from data.py (one row per run).
 - summarize(): median, Q1, Q3, and IQR per measured condition.
 - ratios(): median(PQ) / median(classical) within the same tool, file size, number of
   recipients, operation, and position, with a 95% percentile bootstrap CI (the runs of
   each mode resampled independently, 10,000 iterations, fixed seed).
 - decompose(): per mode and operation, the least-squares fit
-  value = a + b * n_recipients + c * file_bytes over all runs (refinement, NOTES.md).
+  value = a + b * n_recipients + c * file_bytes over all runs.
 """
 
 import numpy as np

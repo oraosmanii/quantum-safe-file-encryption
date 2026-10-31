@@ -40,5 +40,5 @@ figures:
 	$(PYTHON) analysis/sanity.py --phase full
 	$(PYTHON) analysis/figures.py --phase full
 	$(PYTHON) analysis/tables.py --phase full
-	@test -f interop/make_table.py || { echo "error: interop/make_table.py (Person B) is missing" >&2; exit 1; }
+	@test -f interop/make_table.py || { echo "error: interop/make_table.py is missing" >&2; exit 1; }
 	$(DOCKER_RUN) python3 interop/make_table.py

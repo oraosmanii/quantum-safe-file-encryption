@@ -1,7 +1,7 @@
 """Shared helpers for the bench/ scripts: paths, tool calls, CSV files, the run log.
 
 Standard library only, so host-side scripts (bench/run_resources.py) can import it too.
-Every path is relative to the repo root (INTERFACES.md section 1), and every tool call
+Every path is relative to the repo root, and every tool call
 runs with the repo root as its working directory, whatever the caller's directory is.
 """
 
@@ -96,7 +96,7 @@ _versions = {}
 
 
 def tool_version(tool):
-    """`age 1.3.1` or `gnupg 2.5.22` (INTERFACES.md section 3.7), read from the tool once."""
+    """`age 1.3.1` or `gnupg 2.5.22` read from the tool once."""
     if tool not in _versions:
         if tool == "age":
             out = run(["age", "--version"]).stdout.decode().strip()
@@ -118,14 +118,14 @@ def read_rows(rel, header):
         reader = csv.reader(f)
         found = next(reader, [])
         if found != header:
-            sys.exit(f"error: {rel} has header {found}, expected {header} (INTERFACES.md section 7)")
+            sys.exit(f"error: {rel} has header {found}, expected {header}")
         return [dict(zip(header, row)) for row in reader]
 
 
 def append_rows(rel, header, rows):
     """Append rows (dicts) to a CSV, writing the header first if the file is new.
 
-    Refuses to append if the existing header differs from the interface contract.
+    Refuses to append if the existing header differs from the expected one.
     """
     read_rows(rel, header)  # header check only
     p = path(rel)
@@ -181,7 +181,7 @@ def git_head():
 
 
 def check_full_run_ready(script):
-    """Refuse a full run without results/env.json, or with one from another commit (section 8)."""
+    """Refuse a full run without results/env.json, or with one from another commit."""
     if not path(ENV_JSON).is_file():
         sys.exit(f"error: {ENV_JSON} is missing. Run `make env` on the host right before a full run.")
     env = json.loads(path(ENV_JSON).read_text(encoding="utf-8"))

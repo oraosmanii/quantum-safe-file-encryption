@@ -3,7 +3,7 @@
 Runs inside the pqc-bench image, after bench/gen_keys.py:
     docker run --rm -v "$PWD:/work" -w /work pqc-bench python3 bench/sizes.py --phase pilot
 
-Writes (INTERFACES.md sections 2 and 7):
+Writes:
 - results/bench/key_sizes.csv: one row per mode and recipient.
 - results/bench/sizes.csv: one row per condition (mode, size_id, n_recipients) of the phase.
   The ciphertext comes from the same encrypt command the timing runs measure, and

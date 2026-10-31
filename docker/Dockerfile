@@ -6,7 +6,7 @@ ARG DEBIAN_IMAGE=debian:trixie@sha256:4c25275446ca371766b8b093c696782eabce06263f
 
 # ---------------------------------------------------------------------------
 # Stage 1: GnuPG 2.5.22 and its libraries, built from source.
-# The official GnuPG apt repo for trixie no longer carries 2.5.22 (see NOTES.md).
+# The official GnuPG apt repo for trixie no longer carries 2.5.22.
 # Library versions match what the GnuPG project ships in that repo.
 # Signatures were verified on 2026-10-22 against the GnuPG release keys
 # 6DAA6E64A76D2840571B4902528897B826403ADA (Werner Koch) and
@@ -154,7 +154,7 @@ RUN go build -trimpath -o /opt/gopenpgp-cli .
 # ---------------------------------------------------------------------------
 FROM ${DEBIAN_IMAGE}
 
-# hyperfine: timing (Person A). time: GNU time for max_rss_bytes (RQ3). python3: runners.
+# hyperfine: timing. time: GNU time for max_rss_bytes (RQ3). python3: runners.
 # The runtime libraries are what the GnuPG build links against.
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
@@ -172,7 +172,7 @@ ENV PATH=/opt/gnupg/bin:$PATH
 
 # gpg-agent puts its sockets here instead of into GNUPGHOME under the bind-mounted keys/.
 # A container's agent is killed on exit without removing its sockets, and stale sockets
-# in keys/ stop the next fresh container's agent from starting (NOTES.md).
+# in keys/ stop the next fresh container's agent from starting.
 RUN mkdir -p -m 700 /run/user/0
 
 WORKDIR /work

@@ -3,7 +3,7 @@
 Runs on the host, after bench/run_all.py has generated the keys:
     python3 measure/validate_measured.py [--runs N]
 
-Writes nothing under results/; the printed report goes into NOTES.md. Checks:
+Writes nothing under results/; it only prints its report. Checks:
 1. Baseline: `true` under run_measured.sh, the container and shell overhead.
 2. gpg-agent is in the container cgroup whose cpu.stat and memory.peak are read.
 3. Agent counted: gpg-pqc decryption with gpg-agent started before the measurement (as

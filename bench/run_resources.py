@@ -7,12 +7,12 @@ fresh pqc-bench container per measured run (measure/runner.py):
 For each measured condition of the phase, in an order shuffled with the seed saved in
 results/bench/seed_resources.txt: prepare() it in a container, measure each of the
 phase's runs in its own fresh container (no warm-ups), check the last output's SHA-256,
-and append one row per run to results/bench/resources.csv (INTERFACES.md section 7.5).
+and append one row per run to results/bench/resources.csv.
 The commands come from bench/conditions.py, so they are exactly the timing runs'.
 
 The baseline (run_measured.sh true: container and shell overhead) is shuffled in as one
-more entry with the same number of runs and goes to results/bench/resources_baseline.csv
-(section 7.6). Values are stored raw; nothing is subtracted here.
+more entry with the same number of runs and goes to results/bench/resources_baseline.csv.
+Values are stored raw; nothing is subtracted here.
 
 Resumable: a condition (or the baseline) that already has rows for this phase is
 skipped. --force runs the selected entries again and replaces their rows. A failed tool
@@ -54,7 +54,7 @@ _versions = {}
 
 
 def tool_version(tool):
-    """`age 1.3.1` or `gnupg 2.5.22` (INTERFACES.md section 3.7), read from the image once.
+    """`age 1.3.1` or `gnupg 2.5.22` read from the image once.
 
     The tools exist only in the image, so common.tool_version() cannot be used on the host.
     """
